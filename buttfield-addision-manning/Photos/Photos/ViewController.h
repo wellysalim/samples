@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *imageView;
 
 - (IBAction)takePhoto:(id)sender;
+- (IBAction)loadFromLibrary:(id)sender;
 
 @end

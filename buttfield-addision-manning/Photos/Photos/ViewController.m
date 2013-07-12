@@ -41,6 +41,14 @@
     }
 }
 
+- (IBAction)loadFromLibrary:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = image;
     [picker dismissViewControllerAnimated:YES completion:nil];
