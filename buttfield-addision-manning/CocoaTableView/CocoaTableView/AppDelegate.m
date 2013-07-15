@@ -72,5 +72,10 @@
     return textField;
 }
 
+-(void) tableView:(NSTableView *) tableView sortDescriptorsDidChange:(NSArray *)oldDescriptors
+{
+    [self.songs sortUsingDescriptors:tableView.sortDescriptors];
+    [tableView reloadData];
+}
 
 @end
