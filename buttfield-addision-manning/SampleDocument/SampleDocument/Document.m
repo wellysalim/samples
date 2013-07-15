@@ -11,7 +11,10 @@
 @implementation Document
 
 @synthesize textField;
+@synthesize checkbox;
+
 @synthesize text;
+@synthesize checked;
 
 - (id)init
 {
@@ -37,6 +40,7 @@
         self.text = @"";
     }
     textField.stringValue = self.text;
+    checkbox.intValue = self.checked;
 }
 
 + (BOOL)autosavesInPlace
@@ -47,17 +51,35 @@
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
     self.text = textField.stringValue;
-    return [self.text dataUsingEncoding:NSUTF8StringEncoding];
+    self.checked = checkbox.intValue;
+    
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    
+    
+    [dictionary setValue:[NSNumber numberWithBool:checked] forKey:@"checked"];
+    [dictionary setValue:self.text forKey:@"text"];
+    
+    NSError *error = nil;
+    NSData *serializedData = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
+    
+    if (serializedData == nil || error != nil) {
+        return nil;
+    }
+    return serializedData;
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
-    if ([data length] > 0) {
-        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        self.text = string;
-    } else {
-        self.text = @"";
+    NSDictionary *loadedDictionary;
+    NSError *error = nil;
+    
+    loadedDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if (loadedDictionary == nil || error != nil) {
+        return NO;
     }
+    
+    self.text = [loadedDictionary valueForKey:@"text"];
+    self.checked = [[loadedDictionary valueForKey:@"checked"] boolValue];
     return YES;
 }
 

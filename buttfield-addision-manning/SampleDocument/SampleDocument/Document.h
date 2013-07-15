@@ -11,6 +11,8 @@
 @interface Document : NSDocument
 
 @property (weak) IBOutlet NSTextField *textField;
-@property (strong) NSString *text;
+@property (weak) IBOutlet NSButton *checkbox;
 
+@property (strong) NSString *text;
+@property (assign) BOOL checked;
 @end
