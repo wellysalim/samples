@@ -10,4 +10,8 @@
 
 @implementation Song
 
+- (NSString *) durationString {
+    return [NSString stringWithFormat:@"%i:%02i", (int)self.duration/60, (int)self.duration%60];
+}
+
 @end
