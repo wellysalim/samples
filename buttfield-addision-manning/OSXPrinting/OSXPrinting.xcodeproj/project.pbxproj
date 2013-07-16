@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		629B228B1795C8390099BDD3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629B228A1795C8390099BDD3 /* Cocoa.framework */; };
+		629B22951795C8390099BDD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 629B22931795C8390099BDD3 /* InfoPlist.strings */; };
+		629B22971795C8390099BDD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B22961795C8390099BDD3 /* main.m */; };
+		629B229B1795C8390099BDD3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 629B22991795C8390099BDD3 /* Credits.rtf */; };
+		629B229E1795C8390099BDD3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B229D1795C8390099BDD3 /* AppDelegate.m */; };
+		629B22A11795C8390099BDD3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629B229F1795C8390099BDD3 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		629B22871795C8390099BDD3 /* OSXPrinting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSXPrinting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		629B228A1795C8390099BDD3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		629B228D1795C8390099BDD3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		629B228E1795C8390099BDD3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		629B228F1795C8390099BDD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		629B22921795C8390099BDD3 /* OSXPrinting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSXPrinting-Info.plist"; sourceTree = "<group>"; };
+		629B22941795C8390099BDD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		629B22961795C8390099BDD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		629B22981795C8390099BDD3 /* OSXPrinting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OSXPrinting-Prefix.pch"; sourceTree = "<group>"; };
+		629B229A1795C8390099BDD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		629B229C1795C8390099BDD3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		629B229D1795C8390099BDD3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		629B22A01795C8390099BDD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		629B22841795C8390099BDD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629B228B1795C8390099BDD3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		629B227E1795C8390099BDD3 = {
+			isa = PBXGroup;
+			children = (
+				629B22901795C8390099BDD3 /* OSXPrinting */,
+				629B22891795C8390099BDD3 /* Frameworks */,
+				629B22881795C8390099BDD3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		629B22881795C8390099BDD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				629B22871795C8390099BDD3 /* OSXPrinting.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		629B22891795C8390099BDD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				629B228A1795C8390099BDD3 /* Cocoa.framework */,
+				629B228C1795C8390099BDD3 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		629B228C1795C8390099BDD3 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				629B228D1795C8390099BDD3 /* AppKit.framework */,
+				629B228E1795C8390099BDD3 /* CoreData.framework */,
+				629B228F1795C8390099BDD3 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		629B22901795C8390099BDD3 /* OSXPrinting */ = {
+			isa = PBXGroup;
+			children = (
+				629B229C1795C8390099BDD3 /* AppDelegate.h */,
+				629B229D1795C8390099BDD3 /* AppDelegate.m */,
+				629B229F1795C8390099BDD3 /* MainMenu.xib */,
+				629B22911795C8390099BDD3 /* Supporting Files */,
+			);
+			path = OSXPrinting;
+			sourceTree = "<group>";
+		};
+		629B22911795C8390099BDD3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				629B22921795C8390099BDD3 /* OSXPrinting-Info.plist */,
+				629B22931795C8390099BDD3 /* InfoPlist.strings */,
+				629B22961795C8390099BDD3 /* main.m */,
+				629B22981795C8390099BDD3 /* OSXPrinting-Prefix.pch */,
+				629B22991795C8390099BDD3 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		629B22861795C8390099BDD3 /* OSXPrinting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 629B22A41795C8390099BDD3 /* Build configuration list for PBXNativeTarget "OSXPrinting" */;
+			buildPhases = (
+				629B22831795C8390099BDD3 /* Sources */,
+				629B22841795C8390099BDD3 /* Frameworks */,
+				629B22851795C8390099BDD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSXPrinting;
+			productName = OSXPrinting;
+			productReference = 629B22871795C8390099BDD3 /* OSXPrinting.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		629B227F1795C8390099BDD3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Syd Polk";
+			};
+			buildConfigurationList = 629B22821795C8390099BDD3 /* Build configuration list for PBXProject "OSXPrinting" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 629B227E1795C8390099BDD3;
+			productRefGroup = 629B22881795C8390099BDD3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				629B22861795C8390099BDD3 /* OSXPrinting */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		629B22851795C8390099BDD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629B22951795C8390099BDD3 /* InfoPlist.strings in Resources */,
+				629B229B1795C8390099BDD3 /* Credits.rtf in Resources */,
+				629B22A11795C8390099BDD3 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		629B22831795C8390099BDD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629B22971795C8390099BDD3 /* main.m in Sources */,
+				629B229E1795C8390099BDD3 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		629B22931795C8390099BDD3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				629B22941795C8390099BDD3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		629B22991795C8390099BDD3 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				629B229A1795C8390099BDD3 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		629B229F1795C8390099BDD3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				629B22A01795C8390099BDD3 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		629B22A21795C8390099BDD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		629B22A31795C8390099BDD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		629B22A51795C8390099BDD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OSXPrinting/OSXPrinting-Prefix.pch";
+				INFOPLIST_FILE = "OSXPrinting/OSXPrinting-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		629B22A61795C8390099BDD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OSXPrinting/OSXPrinting-Prefix.pch";
+				INFOPLIST_FILE = "OSXPrinting/OSXPrinting-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		629B22821795C8390099BDD3 /* Build configuration list for PBXProject "OSXPrinting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				629B22A21795C8390099BDD3 /* Debug */,
+				629B22A31795C8390099BDD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		629B22A41795C8390099BDD3 /* Build configuration list for PBXNativeTarget "OSXPrinting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				629B22A51795C8390099BDD3 /* Debug */,
+				629B22A61795C8390099BDD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 629B227F1795C8390099BDD3 /* Project object */;
+}
