@@ -15,6 +15,8 @@
 @property (weak) IBOutlet NSTextField *latitudeLabel;
 @property (weak) IBOutlet NSTextField *longitudeLabel;
 @property (weak) IBOutlet NSTextField *accuracyLabel;
+@property (weak) IBOutlet NSTextField *addressLabel;
+
 @property (weak) IBOutlet NSProgressIndicator *spinner;
 
 @end
