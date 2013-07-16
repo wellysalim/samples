@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOo-r5-ftC">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQX-1F-R5M">
+                                <items>
+                                    <navigationItem title="Title" id="6lK-kH-MXs">
+                                        <barButtonItem key="rightBarButtonItem" title="Print" id="c5b-BB-bdp">
+                                            <connections>
+                                                <action selector="print:" destination="2" id="GQf-NE-PfF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eOo-r5-ftC" firstAttribute="top" secondItem="XQX-1F-R5M" secondAttribute="bottom" type="default" id="3bL-yX-Amg"/>
+                            <constraint firstItem="eOo-r5-ftC" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="9jp-Rc-pwD"/>
+                            <constraint firstItem="XQX-1F-R5M" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Bcj-K3-qPK"/>
+                            <constraint firstItem="XQX-1F-R5M" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="CHY-p8-Kh2"/>
+                            <constraint firstItem="eOo-r5-ftC" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="bYh-9p-jHj"/>
+                            <constraint firstItem="eOo-r5-ftC" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="bt2-ea-AQ6"/>
+                            <constraint firstItem="XQX-1F-R5M" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="oFa-jT-vOu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="eOo-r5-ftC" id="QhE-3q-eL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
