@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    NSMetadataQuery* metadataQuery;
+}
 
 @end
 
@@ -21,6 +23,14 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyValueStoreDidChange:) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:[NSUbiquitousKeyValueStore defaultStore]];
     self.textField.text = [[NSUbiquitousKeyValueStore defaultStore] stringForKey:@"cloud_string"];
+    
+    metadataQuery = [[NSMetadataQuery alloc] init];
+    [metadataQuery setSearchScopes:[NSArray arrayWithObject:NSMetadataQueryUbiquitousDocumentsScope]];
+    [metadataQuery setPredicate:[NSPredicate predicateWithFormat:@"%K LIKE '*'", NSMetadataItemFSNameKey]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(queryDidUpdate:) name:NSMetadataQueryDidUpdateNotification object:metadataQuery];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(queryDidUpdate:) name:NSMetadataQueryDidFinishGatheringNotification object:metadataQuery];
+    [metadataQuery startQuery];
+    self.fileList.text = @"";
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -39,6 +49,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) queryDidUpdate: (NSNotification *) notification
+{
+    NSMutableArray *files = [NSMutableArray array];
+    
+    for (NSMetadataItem *item in metadataQuery.results) {
+        NSURL *filename = [item valueForAttribute:NSMetadataItemPathKey];
+        [files addObject:filename];
+    }
+    self.fileList.text = [files description];
 }
 
 @end

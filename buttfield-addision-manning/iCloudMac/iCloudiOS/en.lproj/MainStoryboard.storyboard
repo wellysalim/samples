@@ -19,15 +19,28 @@
                                     <outlet property="delegate" destination="2" id="c9H-KO-HTS"/>
                                 </connections>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB9-Nb-fJZ">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="391" id="4aG-Jq-rkh"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bB9-Nb-fJZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8sw-fE-ISs"/>
                             <constraint firstItem="AuM-BB-uf3" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LcJ-y9-OaC"/>
+                            <constraint firstItem="bB9-Nb-fJZ" firstAttribute="top" secondItem="AuM-BB-uf3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Pf4-ey-QAr"/>
+                            <constraint firstAttribute="trailing" secondItem="bB9-Nb-fJZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YpN-pN-ojK"/>
                             <constraint firstAttribute="trailing" secondItem="AuM-BB-uf3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ts6-Em-z3q"/>
                             <constraint firstItem="AuM-BB-uf3" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="vwA-hB-O2e"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fileList" destination="bB9-Nb-fJZ" id="YK1-XY-ZH4"/>
                         <outlet property="textField" destination="AuM-BB-uf3" id="4g7-cq-JcT"/>
                     </connections>
                 </viewController>
