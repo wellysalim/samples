@@ -8,22 +8,14 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
+@synthesize helloLabel;
+@synthesize nameField;
 
-- (void)viewDidLoad
+- (IBAction)displayHelloName:(id)sender
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *hello = [NSString stringWithFormat:@"Hello %@", [nameField text]];
+    [helloLabel setText:hello];
 }
 
 @end

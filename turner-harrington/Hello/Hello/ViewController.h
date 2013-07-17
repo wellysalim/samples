@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *helloLabel;
+@property (nonatomic, weak) IBOutlet UITextField *nameField;
+
+- (IBAction)displayHelloName:(id)sender;
+
 @end
