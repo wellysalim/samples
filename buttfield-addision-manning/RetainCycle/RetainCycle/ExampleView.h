@@ -15,5 +15,5 @@
 @end
 
 @interface ExampleView : UIView
-@property (strong) IBOutlet id <ExampleViewDelegate> delegate;
+@property (weak) IBOutlet id <ExampleViewDelegate> delegate;
 @end
