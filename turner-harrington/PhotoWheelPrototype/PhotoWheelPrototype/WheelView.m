@@ -8,8 +8,47 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "WheelView.h"
+#import "SpinGestureRecognizer.h"
+
+@interface WheelView ()
+@property (nonatomic, assign) CGFloat currentAngle;
+@end
 
 @implementation WheelView
+
+- (void) commonInit
+{
+    [self setCurrentAngle:0.0];
+    SpinGestureRecognizer *spin = [[SpinGestureRecognizer alloc] initWithTarget:self action:@selector(spin:)];
+    [self addGestureRecognizer:spin];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
 
 - (void)setAngle:(CGFloat)angle
 {
@@ -62,7 +101,7 @@
 
 - (void)layoutSubviews
 {
-    [self setAngle:0];
+    [self setAngle:[self currentAngle]];
 }
 
 - (void)setStyle:(WheelViewStyle)newStyle
@@ -70,9 +109,17 @@
     if (_style != newStyle) {
         _style = newStyle;
         [UIView animateWithDuration:0.3 animations:^{
-            [self setAngle:0];
+            [self setAngle:[self currentAngle]];
         }];
     }
+}
+
+- (void) spin:(SpinGestureRecognizer *)recognizer
+{
+    CGFloat angleInRadians = -[recognizer rotation];
+    CGFloat degress = 180.0 * angleInRadians / M_PI;
+    [self setCurrentAngle:[self currentAngle] + degress];
+    [self setAngle:[self currentAngle]];
 }
 
 @end
