@@ -97,12 +97,12 @@
 				62B45DB517979195008BC67B /* AppDelegate.m */,
 				62B45DBD17979195008BC67B /* MasterViewController.h */,
 				62B45DBE17979195008BC67B /* MasterViewController.m */,
+				62B45DC317979195008BC67B /* MasterViewController.xib */,
 				6238D0C417979F49009043CC /* NameEditorViewController.h */,
 				6238D0C517979F49009043CC /* NameEditorViewController.m */,
 				6238D0C617979F49009043CC /* NameEditorViewController.xib */,
 				62B45DC017979195008BC67B /* DetailViewController.h */,
 				62B45DC117979195008BC67B /* DetailViewController.m */,
-				62B45DC317979195008BC67B /* MasterViewController.xib */,
 				62B45DC617979195008BC67B /* DetailViewController.xib */,
 				62B45DAC17979194008BC67B /* Supporting Files */,
 			);
