@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "CustomCell.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -45,9 +46,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-    
-    [[self collectionView] registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellID"];
-    [[self collectionView] setAllowsMultipleSelection:YES];
+
+    UINib *nib = [UINib nibWithNibName:@"CustomCell" bundle:nil];
+    [[self collectionView] registerNib:nib forCellWithReuseIdentifier:@"CustomCell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,8 +91,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
+    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CustomCell" forIndexPath:indexPath];
     [[cell contentView] setBackgroundColor:[UIColor blueColor]];
+    
+    NSString *text = [NSString stringWithFormat:@"%i", [indexPath item]];
+    [[cell labelText] setText:text];
     return cell;
 }
 
