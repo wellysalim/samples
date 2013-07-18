@@ -63,7 +63,12 @@
         PhotoWheelViewCell *cell = [[PhotoWheelViewCell alloc] initWithFrame:cellFrame];
         [cell setImage:defaultPhoto];
         
+        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellDoubleTapped:)];
+        [doubleTap setNumberOfTapsRequired:2];
+        [cell addGestureRecognizer:doubleTap];
+
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)];
+        [tap requireGestureRecognizerToFail:doubleTap];
         [cell addGestureRecognizer:tap];
         [newArray addObject:cell];
     }
