@@ -21,7 +21,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Photo Album", @"Photo Album");
         self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
@@ -36,6 +35,13 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    self.title = NSLocalizedString(@"Albums", @"Albums");
+    
+    NSMutableOrderedSet *data = [NSMutableOrderedSet orderedSet];
+    [data addObject:@"A Sample Photo Album"];
+    [data addObject:@"Another Photo Album"];
+    [self setData:data];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,12 +52,10 @@
 
 - (void)insertNewObject:(id)sender
 {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    NameEditorViewController *newController = [[NameEditorViewController alloc] initWithDefaultNib];
+    [newController setDelegate:self];
+    [newController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self presentViewController:newController animated:YES completion:nil];
 }
 
 #pragma mark - Table View
@@ -63,7 +67,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return [[self data] count];
 }
 
 // Customize the appearance of table view cells.
@@ -76,9 +80,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    NSString *albumName = [self.data objectAtIndex:[indexPath row]];
+    [[cell textLabel] setText:albumName];
     return cell;
 }
 
@@ -118,6 +121,23 @@
 {
     NSDate *object = _objects[indexPath.row];
     self.detailViewController.detailItem = object;
+}
+
+#pragma mark - NameEditorViewControllerDelegate
+
+- (void)nameEditorViewControllerDidFinish:(NameEditorViewController *)controller
+{
+    NSString *newName = [[controller nameTextField] text];
+    if (newName && [newName length] > 0) {
+        [self.data addObject:newName];
+        [self.tableView reloadData];
+    }
+}
+
+- (void)nameEditorViewControllerDidCancel:(NameEditorViewController *)controller
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
 }
 
 @end

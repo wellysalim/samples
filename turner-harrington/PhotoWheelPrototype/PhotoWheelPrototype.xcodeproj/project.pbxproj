@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6238D0C717979F49009043CC /* NameEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6238D0C517979F49009043CC /* NameEditorViewController.m */; };
+		6238D0C817979F49009043CC /* NameEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6238D0C617979F49009043CC /* NameEditorViewController.xib */; };
 		62B45DA617979194008BC67B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B45DA517979194008BC67B /* UIKit.framework */; };
 		62B45DA817979194008BC67B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B45DA717979194008BC67B /* Foundation.framework */; };
 		62B45DAA17979194008BC67B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B45DA917979194008BC67B /* CoreGraphics.framework */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6238D0C417979F49009043CC /* NameEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameEditorViewController.h; sourceTree = "<group>"; };
+		6238D0C517979F49009043CC /* NameEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameEditorViewController.m; sourceTree = "<group>"; };
+		6238D0C617979F49009043CC /* NameEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameEditorViewController.xib; sourceTree = "<group>"; };
 		62B45DA217979194008BC67B /* PhotoWheelPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoWheelPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B45DA517979194008BC67B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		62B45DA717979194008BC67B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +97,9 @@
 				62B45DB517979195008BC67B /* AppDelegate.m */,
 				62B45DBD17979195008BC67B /* MasterViewController.h */,
 				62B45DBE17979195008BC67B /* MasterViewController.m */,
+				6238D0C417979F49009043CC /* NameEditorViewController.h */,
+				6238D0C517979F49009043CC /* NameEditorViewController.m */,
+				6238D0C617979F49009043CC /* NameEditorViewController.xib */,
 				62B45DC017979195008BC67B /* DetailViewController.h */,
 				62B45DC117979195008BC67B /* DetailViewController.m */,
 				62B45DC317979195008BC67B /* MasterViewController.xib */,
@@ -172,6 +180,7 @@
 				62B45DBC17979195008BC67B /* Default-568h@2x.png in Resources */,
 				62B45DC517979195008BC67B /* MasterViewController.xib in Resources */,
 				62B45DC817979195008BC67B /* DetailViewController.xib in Resources */,
+				6238D0C817979F49009043CC /* NameEditorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +195,7 @@
 				62B45DB617979195008BC67B /* AppDelegate.m in Sources */,
 				62B45DBF17979195008BC67B /* MasterViewController.m in Sources */,
 				62B45DC217979195008BC67B /* DetailViewController.m in Sources */,
+				6238D0C717979F49009043CC /* NameEditorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +328,7 @@
 				62B45DCD17979195008BC67B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
