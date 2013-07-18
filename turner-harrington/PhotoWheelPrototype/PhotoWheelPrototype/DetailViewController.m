@@ -8,9 +8,12 @@
 
 #import "DetailViewController.h"
 #import "CustomCell.h"
+#import "WheelView.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) NSArray *data;
+
 - (void)configureView;
 @end
 
@@ -49,6 +52,17 @@
 
     UINib *nib = [UINib nibWithNibName:@"CustomCell" bundle:nil];
     [[self collectionView] registerNib:nib forCellWithReuseIdentifier:@"CustomCell"];
+    [[self collectionView] setHidden:YES];
+    
+    CGRect cellFrame = CGRectMake(0, 0, 75, 75);
+    NSInteger count = 10;
+    NSMutableArray *newArray = [[NSMutableArray alloc] initWithCapacity:count];
+    for (NSInteger index = 0; index < count; index++) {
+        WheelViewCell *cell = [[WheelViewCell alloc] initWithFrame:cellFrame];
+        [cell setBackgroundColor:[UIColor blueColor]];
+        [newArray addObject:cell];
+    }
+    [self setData:[newArray copy]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,6 +123,20 @@
 {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     [[cell contentView] setBackgroundColor:[UIColor blueColor]];
+}
+
+#pragma WheelViewDataSource methods
+
+- (NSInteger)wheelViewNumberOfCells:(WheelView *)wheelView
+{
+    NSInteger count = [[self data] count];
+    return count;
+}
+
+- (WheelViewCell *)wheelView:(WheelView *)wheelView cellAtIndex:(NSInteger)index
+{
+    WheelViewCell *cell = [[self data] objectAtIndex:index];
+    return cell;
 }
 
 @end

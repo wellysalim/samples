@@ -11,6 +11,7 @@
 		6238D0C817979F49009043CC /* NameEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6238D0C617979F49009043CC /* NameEditorViewController.xib */; };
 		626E048917984ADF000B5E7D /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626E048817984ADF000B5E7D /* CustomCell.xib */; };
 		626E048C17984C7F000B5E7D /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 626E048B17984C7F000B5E7D /* CustomCell.m */; };
+		626E048F17984F78000B5E7D /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 626E048E17984F78000B5E7D /* WheelView.m */; };
 		62B45DA617979194008BC67B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B45DA517979194008BC67B /* UIKit.framework */; };
 		62B45DA817979194008BC67B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B45DA717979194008BC67B /* Foundation.framework */; };
 		62B45DAA17979194008BC67B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B45DA917979194008BC67B /* CoreGraphics.framework */; };
@@ -33,6 +34,8 @@
 		626E048817984ADF000B5E7D /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		626E048A17984C7F000B5E7D /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		626E048B17984C7F000B5E7D /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		626E048D17984F78000B5E7D /* WheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
+		626E048E17984F78000B5E7D /* WheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
 		62B45DA217979194008BC67B /* PhotoWheelPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoWheelPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B45DA517979194008BC67B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		62B45DA717979194008BC67B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +112,8 @@
 				62B45DC017979195008BC67B /* DetailViewController.h */,
 				62B45DC117979195008BC67B /* DetailViewController.m */,
 				62B45DC617979195008BC67B /* DetailViewController.xib */,
+				626E048D17984F78000B5E7D /* WheelView.h */,
+				626E048E17984F78000B5E7D /* WheelView.m */,
 				626E048817984ADF000B5E7D /* CustomCell.xib */,
 				626E048A17984C7F000B5E7D /* CustomCell.h */,
 				626E048B17984C7F000B5E7D /* CustomCell.m */,
@@ -206,6 +211,7 @@
 				62B45DC217979195008BC67B /* DetailViewController.m in Sources */,
 				6238D0C717979F49009043CC /* NameEditorViewController.m in Sources */,
 				626E048C17984C7F000B5E7D /* CustomCell.m in Sources */,
+				626E048F17984F78000B5E7D /* WheelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
