@@ -11,9 +11,15 @@
 @protocol WheelViewDataSource;
 @class WheelViewCell;
 
+typedef enum {
+    WheelViewStyleWheel,
+    WheelViewStyleCarousel,
+} WheelViewStyle;
+
 @interface WheelView : UIView
 
 @property (nonatomic, weak) IBOutlet id<WheelViewDataSource> dataSource;
+@property (nonatomic, assign) WheelViewStyle style;
 
 @end
 
