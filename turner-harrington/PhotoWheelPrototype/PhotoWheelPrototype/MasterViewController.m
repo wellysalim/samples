@@ -132,8 +132,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+    NSString *name = [self.data objectAtIndex:[indexPath row]];
+    [self.detailViewController setDetailItem:name];
 }
 
 #pragma mark - NameEditorViewControllerDelegate
