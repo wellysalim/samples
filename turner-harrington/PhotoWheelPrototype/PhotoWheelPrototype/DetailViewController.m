@@ -62,6 +62,9 @@
     for (NSInteger index = 0; index < count; index++) {
         PhotoWheelViewCell *cell = [[PhotoWheelViewCell alloc] initWithFrame:cellFrame];
         [cell setImage:defaultPhoto];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)];
+        [cell addGestureRecognizer:tap];
         [newArray addObject:cell];
     }
     [self setData:[newArray copy]];
@@ -163,6 +166,11 @@
 {
     WheelViewCell *cell = [[self data] objectAtIndex:index];
     return cell;
+}
+
+- (void)cellTapped:(UIGestureRecognizer *)recognizer
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 @end
