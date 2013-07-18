@@ -35,6 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self isEditing]) {
+        [self.nameTextField setText:self.defaultNameText];
+    }
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -14,6 +14,8 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) id<NameEditorViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSIndexPath *indexPath;
+@property (nonatomic, copy) NSString *defaultNameText;
 
 - (IBAction)cancel: (id)sender;
 - (IBAction)done: (id)sender;

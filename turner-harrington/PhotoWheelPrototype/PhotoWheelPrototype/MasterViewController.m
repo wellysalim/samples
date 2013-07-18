@@ -78,11 +78,26 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell setEditingAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
     }
 
     NSString *albumName = [self.data objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:albumName];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NameEditorViewController *newController = [[NameEditorViewController alloc] initWithDefaultNib];
+    [newController setDelegate:self];
+    [newController setEditing:YES];
+    [newController setIndexPath:indexPath];
+    
+    NSString *name = [self.data objectAtIndex:[indexPath row]];
+    [[newController nameTextField] setText:name];
+    [newController setDefaultNameText:name];
+    [newController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self presentViewController:newController animated:YES completion:nil];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -129,7 +144,13 @@
 {
     NSString *newName = [[controller nameTextField] text];
     if (newName && [newName length] > 0) {
-        [self.data addObject:newName];
+        NSInteger index = [[controller indexPath] row];
+        NSMutableOrderedSet *data = self.data;
+        if ([controller isEditing]) {
+            [data replaceObjectAtIndex:index withObject:newName];
+        } else {
+            [self.data addObject:newName];
+        }
         [self.tableView reloadData];
     }
 }
