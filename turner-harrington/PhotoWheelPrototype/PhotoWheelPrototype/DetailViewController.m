@@ -47,6 +47,7 @@
     [self configureView];
     
     [[self collectionView] registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellID"];
+    [[self collectionView] setAllowsMultipleSelection:YES];
 }
 
 - (void)didReceiveMemoryWarning
