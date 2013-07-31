@@ -7,9 +7,14 @@
 //
 
 #import "DetailViewController.h"
+#import "CustomCell.h"
+#import "WheelView.h"
+#import "PhotoWheelViewCell.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) NSArray *data;
+
 - (void)configureView;
 @end
 
@@ -45,6 +50,53 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+
+    UINib *nib = [UINib nibWithNibName:@"CustomCell" bundle:nil];
+    [[self collectionView] registerNib:nib forCellWithReuseIdentifier:@"CustomCell"];
+    [[self collectionView] setHidden:YES];
+    
+    UIImage *defaultPhoto = [UIImage imageNamed:@"defaultPhoto.png"];
+    CGRect cellFrame = CGRectMake(0, 0, 75, 75);
+    NSInteger count = 10;
+    NSMutableArray *newArray = [[NSMutableArray alloc] initWithCapacity:count];
+    for (NSInteger index = 0; index < count; index++) {
+        PhotoWheelViewCell *cell = [[PhotoWheelViewCell alloc] initWithFrame:cellFrame];
+        [cell setImage:defaultPhoto];
+        
+        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellDoubleTapped:)];
+        [doubleTap setNumberOfTapsRequired:2];
+        [cell addGestureRecognizer:doubleTap];
+
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)];
+        [tap requireGestureRecognizerToFail:doubleTap];
+        [cell addGestureRecognizer:tap];
+        [newArray addObject:cell];
+    }
+    [self setData:[newArray copy]];
+    
+    NSArray *segmentedItems = @[@"Wheel", @"Carousel", @"Flow"];
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentedItems];
+    [segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [segmentedControl setSegmentedControlStyle:UISegmentedControlStyleBar];
+    [segmentedControl setSelectedSegmentIndex:0];
+    [[self navigationItem] setTitleView:segmentedControl];
+}
+
+- (void)segmentedControlValueChanged:(id)sender
+{
+    NSInteger index = [sender selectedSegmentIndex];
+    if (index == 0) {
+        [[self collectionView] setHidden:YES];
+        [[self wheelView] setHidden:NO];
+        [[self wheelView] setStyle:WheelViewStyleWheel];
+    } else if (index == 1) {
+        [[self collectionView] setHidden:YES];
+        [[self wheelView] setHidden:NO];
+        [[self wheelView] setStyle:WheelViewStyleCarousel];
+    } else {
+        [[self collectionView] setHidden:NO];
+        [[self wheelView] setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +128,54 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+#pragma - UICollectionViewDataSource and UICollectionViewDelegate
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 1000;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CustomCell" forIndexPath:indexPath];
+    [[cell contentView] setBackgroundColor:[UIColor blueColor]];
+    
+    NSString *text = [NSString stringWithFormat:@"%i", [indexPath item]];
+    [[cell labelText] setText:text];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    [[cell contentView] setBackgroundColor:[UIColor yellowColor]];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    [[cell contentView] setBackgroundColor:[UIColor blueColor]];
+}
+
+#pragma WheelViewDataSource methods
+
+- (NSInteger)wheelViewNumberOfCells:(WheelView *)wheelView
+{
+    NSInteger count = [[self data] count];
+    return count;
+}
+
+- (WheelViewCell *)wheelView:(WheelView *)wheelView cellAtIndex:(NSInteger)index
+{
+    WheelViewCell *cell = [[self data] objectAtIndex:index];
+    return cell;
+}
+
+- (void)cellTapped:(UIGestureRecognizer *)recognizer
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 @end

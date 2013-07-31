@@ -79,6 +79,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setEditingAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        [cell setShowsReorderControl:YES];
     }
 
     NSString *albumName = [self.data objectAtIndex:[indexPath row]];
@@ -109,19 +110,16 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [self.data removeObjectAtIndex:[indexPath row]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
 
-/*
-// Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    [self.data exchangeObjectAtIndex:[fromIndexPath row] withObjectAtIndex:[toIndexPath row]];
 }
-*/
+
 
 /*
 // Override to support conditional rearranging of the table view.
@@ -134,8 +132,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+    NSString *name = [self.data objectAtIndex:[indexPath row]];
+    [self.detailViewController setDetailItem:name];
 }
 
 #pragma mark - NameEditorViewControllerDelegate
