@@ -1,0 +1,10 @@
+00000000000000000000000000000000 4013b7848db3d80913bb04b6b0d6d4f4 ffffffffffffffffffffffffffffffff 102 /Users/jazzman/dev/opengl/build/Debug-iphonesimulator/opengl.app.dSYM
+bea1579634fb8aaee440a145dadd8a2e 386db9d5fd05841990590d9ea9b3428c ffffffffffffffffffffffffffffffff 204 /Users/jazzman/dev/opengl/build/Debug-iphonesimulator/opengl.app
+000000004a5d2489000000000000238a 4149af63559704cd1dc3e35f271fba43 ffffffffffffffffffffffffffffffff 1546 /Users/jazzman/dev/opengl/build/Debug-iphonesimulator/opengl.app/MainWindow.nib
+00000000000000000000000000000000 49e772187f718b56b4cf913ec0a29d8b ffffffffffffffffffffffffffffffff 8 /Users/jazzman/dev/opengl/build/Debug-iphonesimulator/opengl.app/PkgInfo
+00000000000000000000000000000000 49e772187f718b56b4cf913ec0a29d8b ffffffffffffffffffffffffffffffff 926 /Users/jazzman/dev/opengl/build/Debug-iphonesimulator/opengl.app/Info.plist
+6361a9d5c8302bebc91004007eb7aab7 9c895120e30181013093461a8375b950 ffffffffffffffffffffffffffffffff 25776 /Users/jazzman/dev/opengl/build/Debug-iphonesimulator/opengl.app/opengl
+7241eec0f39f267f695afbb265334eb2 826cb989d9905f3ae412e5eca86acb01 ffffffffffffffffffffffffffffffff 25808 /Users/jazzman/dev/opengl/build/opengl.build/Debug-iphonesimulator/opengl.build/Objects-normal/i386/EAGLView.o
+7241eec0f0a2c2b6695afbb26533d37a 9653ac168702258efb20f0c54ac5d57c ffffffffffffffffffffffffffffffff 22024 /Users/jazzman/dev/opengl/build/opengl.build/Debug-iphonesimulator/opengl.build/Objects-normal/i386/openglAppDelegate.o
+7241eec0b9e9eb9b695afbb26533e2c1 051f528a6ba8b43cbf78ea9bf9b66b4d ffffffffffffffffffffffffffffffff 6232 /Users/jazzman/dev/opengl/build/opengl.build/Debug-iphonesimulator/opengl.build/Objects-normal/i386/main.o
+0000000003160da40000000000001df3 7241eec0b7b53247695afbb265338b3f ffffffffffffffffffffffffffffffff 22662292 /var/folders/O0/O0Wz3BnLH+aQC07MsB72Mk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/opengl_Prefix-ewtrkttnvycnnvduqfuqtrwbjzgt/opengl_Prefix.pch.gch

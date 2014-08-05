@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BB8FDE71-A06E-4E69-8B65-2A3DDD1D4490</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TableViewPlayground</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FE63BF97-8027-4612-B8C3-4ED6AB2F276B</key>
+		<string>ssh://github.com/sydvicious/samples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Apple/TableViewPlayground/TableViewPlayground.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FE63BF97-8027-4612-B8C3-4ED6AB2F276B</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/sydvicious/samples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FE63BF97-8027-4612-B8C3-4ED6AB2F276B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FE63BF97-8027-4612-B8C3-4ED6AB2F276B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>samples</string>
+		</dict>
+	</array>
+</dict>
+</plist>

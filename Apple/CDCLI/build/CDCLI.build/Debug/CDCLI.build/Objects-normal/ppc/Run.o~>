@@ -1,0 +1,12 @@
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m: In function '-[Run date]':
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:21: warning: 'Run' may not respond to '-willAccessValueForKey:'
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:21: warning: (Messages without a matching method signature
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:21: warning: will be assumed to return 'id' and accept
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:21: warning: '...' as arguments.)
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:22: warning: 'Run' may not respond to '-primitiveValueForKey:'
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:23: warning: 'Run' may not respond to '-didAccessValueForKey:'
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m: In function '-[Run setDate:]':
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:30: warning: 'Run' may not respond to '-setPrimitiveValue:forKey:'
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m: In function '-[Run processID]':
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:36: warning: 'Run' may not respond to '-willAccessValueForKey:'
+/Volumes/Stravinsky/Programming/Tutorials/CDCLI/Run.m:38: warning: 'Run' may not respond to '-didAccessValueForKey:'
