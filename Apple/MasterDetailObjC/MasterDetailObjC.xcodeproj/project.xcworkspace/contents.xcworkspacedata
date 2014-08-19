@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MasterDetailCoreData.xcodeproj">
+      location = "self:MasterDetailObjC.xcodeproj">
    </FileRef>
 </Workspace>
