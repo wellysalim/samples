@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Bone Jarring Games and Software. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
 @interface MasterDetailObjCTests : XCTestCase
