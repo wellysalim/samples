@@ -32,7 +32,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.endIndex-1].topViewController as? DetailViewController
+            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
         }
     }
 
@@ -60,17 +60,20 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    // #pragma mark - Segues
+    // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             let indexPath = self.tableView.indexPathForSelectedRow()
             let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-            ((segue.destinationViewController as UINavigationController).topViewController as DetailViewController).detailItem = object
+            let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
+            controller.detailItem = object
+            controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem()
+            controller.navigationItem.leftItemsSupplementBackButton = true
         }
     }
 
-    // #pragma mark - Table View
+    // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return self.fetchedResultsController.sections.count
@@ -107,19 +110,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-            self.detailViewController!.detailItem = object
-        }
-    }
-
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         cell.textLabel.text = object.valueForKey("timeStamp").description
     }
 
-    // #pragma mark - Fetched results controller
+    // MARK: - Fetched results controller
 
     var fetchedResultsController: NSFetchedResultsController {
         if _fetchedResultsController != nil {
@@ -164,9 +160,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
         switch type {
-            case NSFetchedResultsChangeInsert:
+            case .Insert:
                 self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-            case NSFetchedResultsChangeDelete:
+            case .Delete:
                 self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
             default:
                 return
@@ -175,13 +171,13 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath) {
         switch type {
-            case NSFetchedResultsChangeInsert:
+            case .Insert:
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
-            case NSFetchedResultsChangeDelete:
+            case .Delete:
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            case NSFetchedResultsChangeUpdate:
+            case .Update:
                 self.configureCell(tableView.cellForRowAtIndexPath(indexPath), atIndexPath: indexPath)
-            case NSFetchedResultsChangeMove:
+            case .Move:
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
             default:

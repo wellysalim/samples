@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Bone Jarring Games and Software. All rights reserved.
 //
 
+import UIKit
 import XCTest
 
 class MasterDetailSwiftTests: XCTestCase {
