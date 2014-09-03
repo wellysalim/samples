@@ -1,3 +1,5 @@
 *.xcuserdata
 *.xcuserdatad
+xcshareddata
+xcuserdata
 
