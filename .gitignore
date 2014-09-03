@@ -1,5 +1,6 @@
 *.xcuserdata
 *.xcuserdatad
+*.xcuserstate
 xcshareddata
 xcuserdata
 
