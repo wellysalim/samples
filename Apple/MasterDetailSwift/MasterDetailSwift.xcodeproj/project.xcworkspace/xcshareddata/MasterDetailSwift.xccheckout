@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4E7D1CF0-B287-4DDD-BD54-C0E031C2337C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MasterDetailSwift</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CD42E382FAADF634FDC67137870BBE3F4B2FF7EA</key>
+		<string>github.com:sydvicious/samples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Apple/MasterDetailSwift/MasterDetailSwift.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CD42E382FAADF634FDC67137870BBE3F4B2FF7EA</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:sydvicious/samples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CD42E382FAADF634FDC67137870BBE3F4B2FF7EA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CD42E382FAADF634FDC67137870BBE3F4B2FF7EA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>samples</string>
+		</dict>
+	</array>
+</dict>
+</plist>

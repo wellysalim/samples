@@ -2,39 +2,31 @@
 //  MasterDetailObjCTests.m
 //  MasterDetailObjCTests
 //
-//  Created by Syd Polk on 8/18/14.
-//  Copyright (c) 2014 Bone Jarring Games and Software. All rights reserved.
+//  Created by Syd Polk on 9/2/14.
+//  Copyright (c) 2014 Syd Polk. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>
-
-@interface MasterDetailObjCTests : XCTestCase
-
-@end
+#import "MasterDetailObjCTests.h"
 
 @implementation MasterDetailObjCTests
 
-- (void)setUp {
+- (void)setUp
+{
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    // Set-up code here.
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+- (void)tearDown
+{
+    // Tear-down code here.
+    
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testExample
+{
+    STFail(@"Unit tests are not implemented yet in MasterDetailObjCTests");
 }
 
 @end
