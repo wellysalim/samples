@@ -1,0 +1,243 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68536B091417DC9B006EF743 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68536B081417DC9B006EF743 /* Foundation.framework */; };
+		68536B0C1417DC9B006EF743 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68536B0B1417DC9B006EF743 /* main.m */; };
+		68536B101417DC9B006EF743 /* CoinToss.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 68536B0F1417DC9B006EF743 /* CoinToss.1 */; };
+		68536B181417E74D006EF743 /* CoinTosser.m in Sources */ = {isa = PBXBuildFile; fileRef = 68536B171417E74D006EF743 /* CoinTosser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		68536B021417DC9B006EF743 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				68536B101417DC9B006EF743 /* CoinToss.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		68536B041417DC9B006EF743 /* CoinToss */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CoinToss; sourceTree = BUILT_PRODUCTS_DIR; };
+		68536B081417DC9B006EF743 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		68536B0B1417DC9B006EF743 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68536B0E1417DC9B006EF743 /* CoinToss-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoinToss-Prefix.pch"; sourceTree = "<group>"; };
+		68536B0F1417DC9B006EF743 /* CoinToss.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CoinToss.1; sourceTree = "<group>"; };
+		68536B161417E74D006EF743 /* CoinTosser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinTosser.h; sourceTree = "<group>"; };
+		68536B171417E74D006EF743 /* CoinTosser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinTosser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68536B011417DC9B006EF743 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68536B091417DC9B006EF743 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68536AF91417DC9B006EF743 = {
+			isa = PBXGroup;
+			children = (
+				68536B0A1417DC9B006EF743 /* CoinToss */,
+				68536B071417DC9B006EF743 /* Frameworks */,
+				68536B051417DC9B006EF743 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		68536B051417DC9B006EF743 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68536B041417DC9B006EF743 /* CoinToss */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68536B071417DC9B006EF743 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68536B081417DC9B006EF743 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68536B0A1417DC9B006EF743 /* CoinToss */ = {
+			isa = PBXGroup;
+			children = (
+				68536B0B1417DC9B006EF743 /* main.m */,
+				68536B161417E74D006EF743 /* CoinTosser.h */,
+				68536B171417E74D006EF743 /* CoinTosser.m */,
+				68536B0F1417DC9B006EF743 /* CoinToss.1 */,
+				68536B0D1417DC9B006EF743 /* Supporting Files */,
+			);
+			path = CoinToss;
+			sourceTree = "<group>";
+		};
+		68536B0D1417DC9B006EF743 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68536B0E1417DC9B006EF743 /* CoinToss-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68536B031417DC9B006EF743 /* CoinToss */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68536B131417DC9B006EF743 /* Build configuration list for PBXNativeTarget "CoinToss" */;
+			buildPhases = (
+				68536B001417DC9B006EF743 /* Sources */,
+				68536B011417DC9B006EF743 /* Frameworks */,
+				68536B021417DC9B006EF743 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoinToss;
+			productName = CoinToss;
+			productReference = 68536B041417DC9B006EF743 /* CoinToss */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68536AFB1417DC9B006EF743 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "White Peak Software Inc.";
+			};
+			buildConfigurationList = 68536AFE1417DC9B006EF743 /* Build configuration list for PBXProject "CoinToss" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 68536AF91417DC9B006EF743;
+			productRefGroup = 68536B051417DC9B006EF743 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68536B031417DC9B006EF743 /* CoinToss */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68536B001417DC9B006EF743 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68536B0C1417DC9B006EF743 /* main.m in Sources */,
+				68536B181417E74D006EF743 /* CoinTosser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		68536B111417DC9B006EF743 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		68536B121417DC9B006EF743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		68536B141417DC9B006EF743 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoinToss/CoinToss-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		68536B151417DC9B006EF743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoinToss/CoinToss-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68536AFE1417DC9B006EF743 /* Build configuration list for PBXProject "CoinToss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68536B111417DC9B006EF743 /* Debug */,
+				68536B121417DC9B006EF743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68536B131417DC9B006EF743 /* Build configuration list for PBXNativeTarget "CoinToss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68536B141417DC9B006EF743 /* Debug */,
+				68536B151417DC9B006EF743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 68536AFB1417DC9B006EF743 /* Project object */;
+}

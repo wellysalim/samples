@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68E5E9A913E45907004B384B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E5E9A813E45907004B384B /* UIKit.framework */; };
+		68E5E9AB13E45907004B384B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E5E9AA13E45907004B384B /* Foundation.framework */; };
+		68E5E9AD13E45907004B384B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E5E9AC13E45907004B384B /* CoreGraphics.framework */; };
+		68E5E9B313E45907004B384B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68E5E9B113E45907004B384B /* InfoPlist.strings */; };
+		68E5E9B513E45907004B384B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E5E9B413E45907004B384B /* main.m */; };
+		68E5E9B913E45907004B384B /* IBPlaygroundAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E5E9B813E45907004B384B /* IBPlaygroundAppDelegate.m */; };
+		68E5E9BC13E45907004B384B /* IBPlaygroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E5E9BB13E45907004B384B /* IBPlaygroundViewController.m */; };
+		68E5E9BF13E45907004B384B /* IBPlaygroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68E5E9BD13E45907004B384B /* IBPlaygroundViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		68E5E9A413E45907004B384B /* IBPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68E5E9A813E45907004B384B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		68E5E9AA13E45907004B384B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		68E5E9AC13E45907004B384B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		68E5E9B013E45907004B384B /* IBPlayground-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IBPlayground-Info.plist"; sourceTree = "<group>"; };
+		68E5E9B213E45907004B384B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68E5E9B413E45907004B384B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68E5E9B613E45907004B384B /* IBPlayground-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IBPlayground-Prefix.pch"; sourceTree = "<group>"; };
+		68E5E9B713E45907004B384B /* IBPlaygroundAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBPlaygroundAppDelegate.h; sourceTree = "<group>"; };
+		68E5E9B813E45907004B384B /* IBPlaygroundAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBPlaygroundAppDelegate.m; sourceTree = "<group>"; };
+		68E5E9BA13E45907004B384B /* IBPlaygroundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBPlaygroundViewController.h; sourceTree = "<group>"; };
+		68E5E9BB13E45907004B384B /* IBPlaygroundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBPlaygroundViewController.m; sourceTree = "<group>"; };
+		68E5E9BE13E45907004B384B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IBPlaygroundViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68E5E9A113E45907004B384B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68E5E9A913E45907004B384B /* UIKit.framework in Frameworks */,
+				68E5E9AB13E45907004B384B /* Foundation.framework in Frameworks */,
+				68E5E9AD13E45907004B384B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68E5E99913E45906004B384B = {
+			isa = PBXGroup;
+			children = (
+				68E5E9AE13E45907004B384B /* IBPlayground */,
+				68E5E9A713E45907004B384B /* Frameworks */,
+				68E5E9A513E45907004B384B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		68E5E9A513E45907004B384B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68E5E9A413E45907004B384B /* IBPlayground.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68E5E9A713E45907004B384B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68E5E9A813E45907004B384B /* UIKit.framework */,
+				68E5E9AA13E45907004B384B /* Foundation.framework */,
+				68E5E9AC13E45907004B384B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68E5E9AE13E45907004B384B /* IBPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				68E5E9B713E45907004B384B /* IBPlaygroundAppDelegate.h */,
+				68E5E9B813E45907004B384B /* IBPlaygroundAppDelegate.m */,
+				68E5E9BA13E45907004B384B /* IBPlaygroundViewController.h */,
+				68E5E9BB13E45907004B384B /* IBPlaygroundViewController.m */,
+				68E5E9BD13E45907004B384B /* IBPlaygroundViewController.xib */,
+				68E5E9AF13E45907004B384B /* Supporting Files */,
+			);
+			path = IBPlayground;
+			sourceTree = "<group>";
+		};
+		68E5E9AF13E45907004B384B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68E5E9B013E45907004B384B /* IBPlayground-Info.plist */,
+				68E5E9B113E45907004B384B /* InfoPlist.strings */,
+				68E5E9B413E45907004B384B /* main.m */,
+				68E5E9B613E45907004B384B /* IBPlayground-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68E5E9A313E45907004B384B /* IBPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68E5E9C213E45907004B384B /* Build configuration list for PBXNativeTarget "IBPlayground" */;
+			buildPhases = (
+				68E5E9A013E45907004B384B /* Sources */,
+				68E5E9A113E45907004B384B /* Frameworks */,
+				68E5E9A213E45907004B384B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IBPlayground;
+			productName = IBPlayground;
+			productReference = 68E5E9A413E45907004B384B /* IBPlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68E5E99B13E45907004B384B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "White Peak Software Inc.";
+			};
+			buildConfigurationList = 68E5E99E13E45907004B384B /* Build configuration list for PBXProject "IBPlayground" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 68E5E99913E45906004B384B;
+			productRefGroup = 68E5E9A513E45907004B384B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68E5E9A313E45907004B384B /* IBPlayground */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68E5E9A213E45907004B384B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68E5E9B313E45907004B384B /* InfoPlist.strings in Resources */,
+				68E5E9BF13E45907004B384B /* IBPlaygroundViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68E5E9A013E45907004B384B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68E5E9B513E45907004B384B /* main.m in Sources */,
+				68E5E9B913E45907004B384B /* IBPlaygroundAppDelegate.m in Sources */,
+				68E5E9BC13E45907004B384B /* IBPlaygroundViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		68E5E9B113E45907004B384B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68E5E9B213E45907004B384B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		68E5E9BD13E45907004B384B /* IBPlaygroundViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68E5E9BE13E45907004B384B /* en */,
+			);
+			name = IBPlaygroundViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68E5E9C013E45907004B384B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		68E5E9C113E45907004B384B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68E5E9C313E45907004B384B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IBPlayground/IBPlayground-Prefix.pch";
+				INFOPLIST_FILE = "IBPlayground/IBPlayground-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		68E5E9C413E45907004B384B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IBPlayground/IBPlayground-Prefix.pch";
+				INFOPLIST_FILE = "IBPlayground/IBPlayground-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68E5E99E13E45907004B384B /* Build configuration list for PBXProject "IBPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68E5E9C013E45907004B384B /* Debug */,
+				68E5E9C113E45907004B384B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68E5E9C213E45907004B384B /* Build configuration list for PBXNativeTarget "IBPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68E5E9C313E45907004B384B /* Debug */,
+				68E5E9C413E45907004B384B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 68E5E99B13E45907004B384B /* Project object */;
+}
