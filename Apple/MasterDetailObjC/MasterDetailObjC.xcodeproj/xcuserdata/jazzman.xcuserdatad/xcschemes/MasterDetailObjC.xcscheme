@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "620875AF19A2FA5F004FECD4"
+               BlueprintIdentifier = "62507A4419CBDE2300A1D9B2"
                BuildableName = "MasterDetailObjC.app"
                BlueprintName = "MasterDetailObjC"
                ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "620875CB19A2FA5F004FECD4"
+               BlueprintIdentifier = "62507A6319CBDE2300A1D9B2"
                BuildableName = "MasterDetailObjCTests.xctest"
                BlueprintName = "MasterDetailObjCTests"
                ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "620875CB19A2FA5F004FECD4"
+               BlueprintIdentifier = "62507A6319CBDE2300A1D9B2"
                BuildableName = "MasterDetailObjCTests.xctest"
                BlueprintName = "MasterDetailObjCTests"
                ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "620875AF19A2FA5F004FECD4"
+            BlueprintIdentifier = "62507A4419CBDE2300A1D9B2"
             BuildableName = "MasterDetailObjC.app"
             BlueprintName = "MasterDetailObjC"
             ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "620875AF19A2FA5F004FECD4"
+            BlueprintIdentifier = "62507A4419CBDE2300A1D9B2"
             BuildableName = "MasterDetailObjC.app"
             BlueprintName = "MasterDetailObjC"
             ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "620875AF19A2FA5F004FECD4"
+            BlueprintIdentifier = "62507A4419CBDE2300A1D9B2"
             BuildableName = "MasterDetailObjC.app"
             BlueprintName = "MasterDetailObjC"
             ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
