@@ -23,6 +23,8 @@
 		42DA9FB217E8F9EC000E7187 /* Grocery_DudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA9FB117E8F9EC000E7187 /* Grocery_DudeTests.m */; };
 		62EF4CFB19DE428600C300C7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62EF4CFA19DE428600C300C7 /* CoreData.framework */; };
 		62EF4CFF19DE434C00C300C7 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EF4CFE19DE434C00C300C7 /* CoreDataHelper.m */; };
+		62EF4D0319DE519A00C300C7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 62EF4D0119DE519A00C300C7 /* Model.xcdatamodeld */; };
+		62EF4D0619DE567700C300C7 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EF4D0519DE567700C300C7 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		62EF4CFA19DE428600C300C7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		62EF4CFD19DE434C00C300C7 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		62EF4CFE19DE434C00C300C7 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		62EF4D0219DE519A00C300C7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		62EF4D0419DE567700C300C7 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		62EF4D0519DE567700C300C7 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,7 @@
 		42DA9F8C17E8F9EB000E7187 /* Grocery Dude */ = {
 			isa = PBXGroup;
 			children = (
+				62EF4D0019DE517400C300C7 /* Data Model */,
 				62EF4CFC19DE42F400C300C7 /* Generic Core Data Classes */,
 				42DA9F9517E8F9EB000E7187 /* AppDelegate.h */,
 				42DA9F9617E8F9EB000E7187 /* AppDelegate.m */,
@@ -167,6 +173,16 @@
 				62EF4CFE19DE434C00C300C7 /* CoreDataHelper.m */,
 			);
 			name = "Generic Core Data Classes";
+			sourceTree = "<group>";
+		};
+		62EF4D0019DE517400C300C7 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				62EF4D0119DE519A00C300C7 /* Model.xcdatamodeld */,
+				62EF4D0419DE567700C300C7 /* Item.h */,
+				62EF4D0519DE567700C300C7 /* Item.m */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62EF4D0619DE567700C300C7 /* Item.m in Sources */,
 				42DA9F9D17E8F9EB000E7187 /* ViewController.m in Sources */,
 				42DA9F9717E8F9EB000E7187 /* AppDelegate.m in Sources */,
+				62EF4D0319DE519A00C300C7 /* Model.xcdatamodeld in Sources */,
 				62EF4CFF19DE434C00C300C7 /* CoreDataHelper.m in Sources */,
 				42DA9F9317E8F9EB000E7187 /* main.m in Sources */,
 			);
@@ -486,6 +504,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		62EF4D0119DE519A00C300C7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				62EF4D0219DE519A00C300C7 /* Model.xcdatamodel */,
+			);
+			currentVersion = 62EF4D0219DE519A00C300C7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 42DA9F7B17E8F9EB000E7187 /* Project object */;
 }

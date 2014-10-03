@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Item.h"
 
 #define debug 1
 
@@ -36,9 +37,28 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
+- (void) demo {
+    if (debug) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    
+    NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request error:nil];
+    
+    for (Item *item in fetchedObjects) {
+        NSLog(@"Deleting Object '%@'", item.name);
+        [_coreDataHelper.context deleteObject:item];
+    }
+}
+
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    if (debug) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self cdh];
+    [self demo];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
