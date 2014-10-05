@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Item.h"
+#import "Unit.h"
 
 #define debug 1
 
@@ -41,13 +42,17 @@
     if (debug) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+    [request setFetchLimit:50];
+    NSError *error = nil;
+    NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request error:&error];
     
-    NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request error:nil];
-    
-    for (Item *item in fetchedObjects) {
-        NSLog(@"Deleting Object '%@'", item.name);
-        [_coreDataHelper.context deleteObject:item];
+    if (error) {
+        NSLog(@"%@", error);
+    } else {
+        for (Unit *unit in fetchedObjects) {
+            NSLog(@"Fetched object = %@", unit.name);
+        }
     }
 }
 
