@@ -38,24 +38,6 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void) demo {
-    if (debug) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
-    [request setFetchLimit:50];
-    NSError *error = nil;
-    NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request error:&error];
-    
-    if (error) {
-        NSLog(@"%@", error);
-    } else {
-        for (Unit *unit in fetchedObjects) {
-            NSLog(@"Fetched object = %@", unit.name);
-        }
-    }
-}
-
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -84,6 +66,36 @@
     return _coreDataHelper;
 }
 
+- (void) showUnitAndItemCount {
+    // List how many items there are in the database
+    NSFetchRequest *items = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    NSError *itemsError = nil;
+    NSManagedObjectContext *context = [self cdh].context;
+    NSArray *fetchedItems = [context executeFetchRequest:items error:&itemsError];
+    if (!fetchedItems) {
+        NSLog(@"%@", itemsError);
+    } else {
+        NSLog(@"Found %lu items(s) ", (unsigned long) [fetchedItems count]);
+    }
+    
+    // List how many unites there are in the database.
+    
+    NSFetchRequest *units = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+    NSError *unitsError = nil;
+    NSArray *fetchedUnits = [context executeFetchRequest:units error:&unitsError];
+    if (!fetchedItems) {
+        NSLog(@"%@", itemsError);
+    } else {
+        NSLog(@"Found %lu unit(s) ", (unsigned long) [fetchedUnits count]);
+    }
+}
+
+- (void) demo {
+    if (debug) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
 
 
 @end
+
