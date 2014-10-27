@@ -13,7 +13,8 @@
 #import "UnitVC.h"
 
 @implementation UnitsTVC
-#define debug 1
+#define debug 0
+
 #pragma mark - DATA
 - (void)configureFetch {
     if (debug==1) {

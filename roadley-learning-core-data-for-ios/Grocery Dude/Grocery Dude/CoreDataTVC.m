@@ -8,7 +8,7 @@
 
 #import "CoreDataTVC.h"
 @implementation CoreDataTVC
-#define debug 1
+#define debug 0
 
 #pragma mark - FETCHING
 - (void)performFetch {

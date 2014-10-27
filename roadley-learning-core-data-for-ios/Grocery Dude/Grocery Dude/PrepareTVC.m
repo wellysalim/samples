@@ -14,7 +14,7 @@
 #import "ItemVC.h"
 
 @implementation PrepareTVC
-#define debug 1
+#define debug 0
 
 #pragma mark - DATA
 - (void)configureFetch {

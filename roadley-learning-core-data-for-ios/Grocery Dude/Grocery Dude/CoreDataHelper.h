@@ -19,11 +19,17 @@
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *coordinator;
 @property (nonatomic, readonly) NSPersistentStore            *store;
 
+@property (nonatomic, readonly) NSManagedObjectContext       *sourceContext;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator *sourceCoordinator;
+@property (nonatomic, readonly) NSPersistentStore            *sourceStore;
+
 @property (nonatomic, retain) MigrationVC *migrationVC;
 
 @property (nonatomic, retain) UIAlertView *importAlertView;
 
 @property (nonatomic, strong) NSXMLParser *parser;
+
+@property (nonatomic, strong) NSTimer *importTimer;
 
 - (void)setupCoreData;
 - (void)saveContext;
