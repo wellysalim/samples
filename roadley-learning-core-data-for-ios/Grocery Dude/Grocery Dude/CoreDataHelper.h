@@ -35,4 +35,6 @@
 - (void)setupCoreData;
 - (void)saveContext;
 - (void)backgroundSaveContext;
+- (BOOL)reloadStore;
+- (NSURL *)applicationStoresDirectory;
 @end

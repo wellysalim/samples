@@ -12,6 +12,7 @@
 #import "Unit.h"
 #import "LocationAtHome.h"
 #import "LocationAtShop.h"
+#import <Dropbox/Dropbox.h>
 
 @implementation AppDelegate
 #define debug 1
@@ -57,12 +58,34 @@
     return _coreDataHelper;
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+#pragma mark - DROPBOX
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url
+  sourceApplication:(NSString *)source annotation:(id)annotation {
+    
+    DBAccount *account = [[DBAccountManager sharedManager] handleOpenURL:url];
+    if (account) {
+        DBFilesystem *filesystem = [[DBFilesystem alloc] initWithAccount:account];
+        [DBFilesystem setSharedFilesystem:filesystem];
+        NSLog(@"Linked to Dropbox!");
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    // Override point for customization after application launch.
+    
+#warning To Enable Dropbox, substitute your APP_KEY and APP_SECRET below and db-APP_KEY in /Supporting Files/Grocery Dude-Info.plist > URL Types
+    DBAccountManager* accountMgr =
+    [[DBAccountManager alloc] initWithAppKey:@"APP_KEY" secret:@"APP_SECRET"];
+    [DBAccountManager setSharedManager:accountMgr];
+    DBAccount *account = accountMgr.linkedAccount;
+    if (account) {
+        DBFilesystem *filesystem = [[DBFilesystem alloc] initWithAccount:account];
+        [DBFilesystem setSharedFilesystem:filesystem];
+    }
     return YES;
 }
 							
