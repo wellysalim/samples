@@ -24,6 +24,8 @@
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *sourceCoordinator;
 @property (nonatomic, readonly) NSPersistentStore            *sourceStore;
 
+@property (nonatomic, readonly) NSPersistentStore            *iCloudStore;
+
 @property (nonatomic, retain) MigrationVC *migrationVC;
 
 @property (nonatomic, retain) UIAlertView *importAlertView;
@@ -37,4 +39,7 @@
 - (void)backgroundSaveContext;
 - (BOOL)reloadStore;
 - (NSURL *)applicationStoresDirectory;
+
+- (BOOL)iCloudAccountIsSignedIn;
+- (void)ensureAppropriateStoreIsLoaded;
 @end

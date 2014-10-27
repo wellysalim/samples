@@ -86,6 +86,8 @@
         DBFilesystem *filesystem = [[DBFilesystem alloc] initWithAccount:account];
         [DBFilesystem setSharedFilesystem:filesystem];
     }
+    
+    [[self cdh] iCloudAccountIsSignedIn];
     return YES;
 }
 							
@@ -113,6 +115,7 @@
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    [[self cdh] ensureAppropriateStoreIsLoaded];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 

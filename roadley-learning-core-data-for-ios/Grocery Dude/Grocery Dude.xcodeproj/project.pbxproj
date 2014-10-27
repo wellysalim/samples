@@ -18,6 +18,7 @@
 		42649E9417EA4CCA0011EAAC /* CoreDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9317EA4CCA0011EAAC /* CoreDataTVC.m */; };
 		42649E9817EA540D0011EAAC /* PrepareTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9717EA540D0011EAAC /* PrepareTVC.m */; };
 		42649E9B17EA5D750011EAAC /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9A17EA5D750011EAAC /* ShopTVC.m */; };
+		42860C4F17F0F5DB00775876 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 42860C4E17F0F5DB00775876 /* Settings.bundle */; };
 		42A9478717EFA51300EBCCF0 /* Faulter.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A9478617EFA51300EBCCF0 /* Faulter.m */; };
 		42A9478A17EFA73700EBCCF0 /* Thumbnailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A9478917EFA73700EBCCF0 /* Thumbnailer.m */; };
 		42D0482217F029B7008EDC6B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D0482117F029B7008EDC6B /* libc++.dylib */; };
@@ -123,6 +124,8 @@
 		42649E9717EA540D0011EAAC /* PrepareTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareTVC.m; sourceTree = "<group>"; };
 		42649E9917EA5D750011EAAC /* ShopTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTVC.h; sourceTree = "<group>"; };
 		42649E9A17EA5D750011EAAC /* ShopTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTVC.m; sourceTree = "<group>"; };
+		42860C4D17F0EB4000775876 /* Grocery Dude.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Grocery Dude.entitlements"; sourceTree = "<group>"; };
+		42860C4E17F0F5DB00775876 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		42A9478517EFA51300EBCCF0 /* Faulter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faulter.h; sourceTree = "<group>"; };
 		42A9478617EFA51300EBCCF0 /* Faulter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faulter.m; sourceTree = "<group>"; };
 		42A9478817EFA73700EBCCF0 /* Thumbnailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thumbnailer.h; sourceTree = "<group>"; };
@@ -479,6 +482,7 @@
 		42DA9F8C17E8F9EB000E7187 /* Grocery Dude */ = {
 			isa = PBXGroup;
 			children = (
+				42860C4D17F0EB4000775876 /* Grocery Dude.entitlements */,
 				42D0491817F0571D008EDC6B /* Objective-Zip */,
 				42EBEFCD17EB07FF000E9046 /* Grocery Dude Picker Text Fields */,
 				42649E9517EA53E70011EAAC /* Grocery Dude Table View Controllers */,
@@ -494,6 +498,7 @@
 				42DA9F8D17E8F9EB000E7187 /* Supporting Files */,
 				42D0482B17F02B0E008EDC6B /* DropboxHelper.h */,
 				42D0482C17F02B0E008EDC6B /* DropboxHelper.m */,
+				42860C4E17F0F5DB00775876 /* Settings.bundle */,
 			);
 			path = "Grocery Dude";
 			sourceTree = "<group>";
@@ -587,6 +592,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Tim Roadley";
 				TargetAttributes = {
+					42DA9F8217E8F9EB000E7187 = {
+						DevelopmentTeam = 5KFJ75859U;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					42DA9FA317E8F9EB000E7187 = {
 						TestTargetID = 42DA9F8217E8F9EB000E7187;
 					};
@@ -620,6 +633,7 @@
 				42DA9F9F17E8F9EB000E7187 /* Images.xcassets in Resources */,
 				42EBEFD817EB1AE1000E9046 /* DefaultData.xml in Resources */,
 				42DA9F9117E8F9EB000E7187 /* InfoPlist.strings in Resources */,
+				42860C4F17F0F5DB00775876 /* Settings.bundle in Resources */,
 				42DA9F9A17E8F9EB000E7187 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,6 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "Grocery Dude/Grocery Dude.entitlements";
 				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Grocery Dude/Grocery Dude-Prefix.pch";
@@ -840,6 +855,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "Grocery Dude/Grocery Dude.entitlements";
 				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Grocery Dude/Grocery Dude-Prefix.pch";
