@@ -37,6 +37,13 @@
 		42DA9FA817E8F9EC000E7187 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA9F8A17E8F9EB000E7187 /* UIKit.framework */; };
 		42DA9FB017E8F9EC000E7187 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42DA9FAE17E8F9EC000E7187 /* InfoPlist.strings */; };
 		42DA9FB217E8F9EC000E7187 /* Grocery_DudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA9FB117E8F9EC000E7187 /* Grocery_DudeTests.m */; };
+		42EBEF7617EA98F7000E9046 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEF7517EA98F7000E9046 /* ItemVC.m */; };
+		42EBEFBA17EAC939000E9046 /* UnitsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFB917EAC939000E9046 /* UnitsTVC.m */; };
+		42EBEFBD17EACA38000E9046 /* UnitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFBC17EACA38000E9046 /* UnitVC.m */; };
+		42EBEFC217EACD0D000E9046 /* LocationsAtHomeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFBF17EACD0D000E9046 /* LocationsAtHomeTVC.m */; };
+		42EBEFC317EACD0D000E9046 /* LocationsAtShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFC117EACD0D000E9046 /* LocationsAtShopTVC.m */; };
+		42EBEFC817EACD1B000E9046 /* LocationAtHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFC517EACD1B000E9046 /* LocationAtHomeVC.m */; };
+		42EBEFC917EACD1B000E9046 /* LocationAtShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFC717EACD1B000E9046 /* LocationAtShopVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +109,20 @@
 		42DA9FAD17E8F9EC000E7187 /* Grocery DudeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Grocery DudeTests-Info.plist"; sourceTree = "<group>"; };
 		42DA9FAF17E8F9EC000E7187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42DA9FB117E8F9EC000E7187 /* Grocery_DudeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Grocery_DudeTests.m; sourceTree = "<group>"; };
+		42EBEF7417EA98F7000E9046 /* ItemVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemVC.h; sourceTree = "<group>"; };
+		42EBEF7517EA98F7000E9046 /* ItemVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemVC.m; sourceTree = "<group>"; };
+		42EBEFB817EAC939000E9046 /* UnitsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitsTVC.h; sourceTree = "<group>"; };
+		42EBEFB917EAC939000E9046 /* UnitsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitsTVC.m; sourceTree = "<group>"; };
+		42EBEFBB17EACA38000E9046 /* UnitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitVC.h; sourceTree = "<group>"; };
+		42EBEFBC17EACA38000E9046 /* UnitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitVC.m; sourceTree = "<group>"; };
+		42EBEFBE17EACD0D000E9046 /* LocationsAtHomeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsAtHomeTVC.h; sourceTree = "<group>"; };
+		42EBEFBF17EACD0D000E9046 /* LocationsAtHomeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsAtHomeTVC.m; sourceTree = "<group>"; };
+		42EBEFC017EACD0D000E9046 /* LocationsAtShopTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsAtShopTVC.h; sourceTree = "<group>"; };
+		42EBEFC117EACD0D000E9046 /* LocationsAtShopTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsAtShopTVC.m; sourceTree = "<group>"; };
+		42EBEFC417EACD1B000E9046 /* LocationAtHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtHomeVC.h; sourceTree = "<group>"; };
+		42EBEFC517EACD1B000E9046 /* LocationAtHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomeVC.m; sourceTree = "<group>"; };
+		42EBEFC617EACD1B000E9046 /* LocationAtShopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShopVC.h; sourceTree = "<group>"; };
+		42EBEFC717EACD1B000E9046 /* LocationAtShopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +153,16 @@
 		4205CD0D17E998BA00E1FDB1 /* Grocery Dude View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				42EBEFC417EACD1B000E9046 /* LocationAtHomeVC.h */,
+				42EBEFC517EACD1B000E9046 /* LocationAtHomeVC.m */,
+				42EBEFC617EACD1B000E9046 /* LocationAtShopVC.h */,
+				42EBEFC717EACD1B000E9046 /* LocationAtShopVC.m */,
 				4205CD0E17E998E500E1FDB1 /* MigrationVC.h */,
 				4205CD0F17E998E500E1FDB1 /* MigrationVC.m */,
+				42EBEF7417EA98F7000E9046 /* ItemVC.h */,
+				42EBEF7517EA98F7000E9046 /* ItemVC.m */,
+				42EBEFBB17EACA38000E9046 /* UnitVC.h */,
+				42EBEFBC17EACA38000E9046 /* UnitVC.m */,
 			);
 			name = "Grocery Dude View Controllers";
 			sourceTree = "<group>";
@@ -176,10 +205,16 @@
 		42649E9517EA53E70011EAAC /* Grocery Dude Table View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				42EBEFBE17EACD0D000E9046 /* LocationsAtHomeTVC.h */,
+				42EBEFBF17EACD0D000E9046 /* LocationsAtHomeTVC.m */,
+				42EBEFC017EACD0D000E9046 /* LocationsAtShopTVC.h */,
+				42EBEFC117EACD0D000E9046 /* LocationsAtShopTVC.m */,
 				42649E9617EA540D0011EAAC /* PrepareTVC.h */,
 				42649E9717EA540D0011EAAC /* PrepareTVC.m */,
 				42649E9917EA5D750011EAAC /* ShopTVC.h */,
 				42649E9A17EA5D750011EAAC /* ShopTVC.m */,
+				42EBEFB817EAC939000E9046 /* UnitsTVC.h */,
+				42EBEFB917EAC939000E9046 /* UnitsTVC.m */,
 			);
 			name = "Grocery Dude Table View Controllers";
 			sourceTree = "<group>";
@@ -360,20 +395,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				42649E8E17E9D1AF0011EAAC /* Unit.m in Sources */,
+				42EBEF7617EA98F7000E9046 /* ItemVC.m in Sources */,
 				42649E9117E9D1AF0011EAAC /* Location.m in Sources */,
 				42649E8B17E9D1AF0011EAAC /* Item.m in Sources */,
 				42DA9F9D17E8F9EB000E7187 /* ViewController.m in Sources */,
+				42EBEFBA17EAC939000E9046 /* UnitsTVC.m in Sources */,
+				42EBEFBD17EACA38000E9046 /* UnitVC.m in Sources */,
 				42DA9F9717E8F9EB000E7187 /* AppDelegate.m in Sources */,
 				4205CD1017E998E500E1FDB1 /* MigrationVC.m in Sources */,
 				42649E8817E9D1AE0011EAAC /* LocationAtShop.m in Sources */,
+				42EBEFC317EACD0D000E9046 /* LocationsAtShopTVC.m in Sources */,
 				42649E9817EA540D0011EAAC /* PrepareTVC.m in Sources */,
 				42649E8517E9D1AE0011EAAC /* LocationAtHome.m in Sources */,
+				42EBEFC817EACD1B000E9046 /* LocationAtHomeVC.m in Sources */,
 				42649E9417EA4CCA0011EAAC /* CoreDataTVC.m in Sources */,
 				424F398F17E946D40051A624 /* Model.xcdatamodeld in Sources */,
 				4235180617E90C1F00489190 /* CoreDataHelper.m in Sources */,
 				4205CD0C17E9951400E1FDB1 /* Model2toModel3.xcmappingmodel in Sources */,
 				4205CD0617E992F200E1FDB1 /* Measurement.m in Sources */,
+				42EBEFC917EACD1B000E9046 /* LocationAtShopVC.m in Sources */,
 				42DA9F9317E8F9EB000E7187 /* main.m in Sources */,
+				42EBEFC217EACD0D000E9046 /* LocationsAtHomeTVC.m in Sources */,
 				4205CD0A17E994B500E1FDB1 /* Amount.m in Sources */,
 				4205CD1617E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel in Sources */,
 				42649E9B17EA5D750011EAAC /* ShopTVC.m in Sources */,

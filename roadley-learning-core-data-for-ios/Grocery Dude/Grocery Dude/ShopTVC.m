@@ -11,6 +11,7 @@
 #import "Item.h"
 #import "Unit.h"
 #import "AppDelegate.h"
+#import "ItemVC.h"
 
 @implementation ShopTVC
 #define debug 1
@@ -151,4 +152,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
     }
 }
 
+#pragma mark - SEGUE
+- (void)tableView:(UITableView *)tableView
+accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    ItemVC *itemVC =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"ItemVC"];
+    itemVC.selectedItemID =
+    [[self.frc objectAtIndexPath:indexPath] objectID];
+    [self.navigationController pushViewController:itemVC animated:YES];
+}
 @end
