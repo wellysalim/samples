@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Item.h"
+#import "Amount.h"
+#import "Unit.h"
 
 @implementation AppDelegate
 #define debug 1
@@ -16,7 +18,6 @@
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-
 }
 
 - (CoreDataHelper*)cdh {

@@ -67,6 +67,49 @@
             </objects>
             <point key="canvasLocation" x="937" y="2"/>
         </scene>
+        <!--MigrationVC-->
+        <scene sceneID="70k-ml-Uxl">
+            <objects>
+                <viewController storyboardIdentifier="migration" id="vYo-W7-Oqc" customClass="MigrationVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iaw-6Y-RNo"/>
+                        <viewControllerLayoutGuide type="bottom" id="D5O-1f-C3m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OcX-a1-omB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Migration Progress 0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za1-fU-iuN">
+                                <rect key="frame" x="20" y="254" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xqg-nx-6D5">
+                                <rect key="frame" x="20" y="283" width="280" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="za1-fU-iuN" secondAttribute="trailing" constant="20" symbolic="YES" id="8y4-LX-C82"/>
+                            <constraint firstItem="Xqg-nx-6D5" firstAttribute="leading" secondItem="za1-fU-iuN" secondAttribute="leading" id="9xZ-VI-Z51"/>
+                            <constraint firstItem="Xqg-nx-6D5" firstAttribute="top" secondItem="za1-fU-iuN" secondAttribute="bottom" constant="8" symbolic="YES" id="eJh-O5-FXG"/>
+                            <constraint firstItem="Xqg-nx-6D5" firstAttribute="trailing" secondItem="za1-fU-iuN" secondAttribute="trailing" id="w30-e6-xR0"/>
+                            <constraint firstItem="Xqg-nx-6D5" firstAttribute="centerY" secondItem="OcX-a1-omB" secondAttribute="centerY" id="zN2-4w-amG"/>
+                            <constraint firstItem="za1-fU-iuN" firstAttribute="leading" secondItem="OcX-a1-omB" secondAttribute="leading" constant="20" symbolic="YES" id="zPi-oj-ji9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="za1-fU-iuN" id="Mvn-SA-XC8"/>
+                        <outlet property="progressView" destination="Xqg-nx-6D5" id="bAe-X3-IZk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEH-OG-ZnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="-691"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="L8o-9x-F7E">
             <objects>
