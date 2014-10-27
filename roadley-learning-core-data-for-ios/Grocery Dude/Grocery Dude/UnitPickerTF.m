@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 #import "Unit.h"
 @implementation UnitPickerTF
-#define debug 1
+#define debug 0
 - (void)fetch {
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
