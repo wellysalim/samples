@@ -12,7 +12,7 @@
 #import "LocationAtHomePickerTF.h" 
 #import "LocationAtShopPickerTF.h"
 
-@interface ItemVC : UIViewController <UITextFieldDelegate,CoreDataPickerTFDelegate>
+@interface ItemVC : UIViewController <UITextFieldDelegate,CoreDataPickerTFDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (strong, nonatomic) NSManagedObjectID *selectedItemID;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
@@ -21,4 +21,7 @@
 @property (strong, nonatomic) IBOutlet LocationAtHomePickerTF *homeLocationPickerTextField;
 @property (strong, nonatomic) IBOutlet LocationAtShopPickerTF *shopLocationPickerTextField;
 @property (strong, nonatomic) IBOutlet UITextField *activeField;
+@property (strong, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (strong, nonatomic) IBOutlet UIButton *cameraButton;
+@property (strong, nonatomic) UIImagePickerController *camera;
 @end

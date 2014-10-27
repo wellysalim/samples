@@ -146,7 +146,7 @@
     }
     NSFetchRequest *request =
     [NSFetchRequest fetchRequestWithEntityName:entity];
-    [request setFetchBatchSize:50];
+    [request setFetchBatchSize:15];
     [request setPredicate:predicate];
     NSError *error;
     NSArray *array = [context executeFetchRequest:request error:&error];

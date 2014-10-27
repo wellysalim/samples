@@ -77,21 +77,22 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
     _context = [[NSManagedObjectContext alloc]
                 initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_context setPersistentStoreCoordinator:_coordinator];
-    
+    [_context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
     
     _importContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [_importContext performBlockAndWait:^{
         [_importContext setPersistentStoreCoordinator:_coordinator];
+        [_importContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
         [_importContext setUndoManager:nil]; // the default on iOS
     }];
     
     _sourceCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
     _sourceContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [_sourceContext performBlockAndWait:^{
+        [_sourceContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
         [_sourceContext setPersistentStoreCoordinator:_sourceCoordinator];
         [_sourceContext setUndoManager:nil]; // the default on iOS
     }];
-    
     return self;
 }
 - (void)loadStore {
@@ -152,38 +153,10 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    [self setDefaultDataStoreAsInitialStore];
+    //[self setDefaultDataStoreAsInitialStore];
     [self loadStore];
-    [self checkIfDefaultDataNeedsImporting];
-    
-    // The code below demonstrates how to migrate one persistent store to another.
-    /*
-    [self loadSourceStore];
-    [_sourceContext performBlock:^{
-        
-        NSLog(@"*** Attempting to migrate '%@' into '%@' .. Please Wait ***",
-              sourceStoreFilename, storeFilename);
-        
-        NSError *error = nil;
-        if (![_sourceCoordinator migratePersistentStore:_sourceStore
-                                                  toURL:[self storeURL]
-                                                options:nil
-                                               withType:NSSQLiteStoreType
-                                                  error:&error]) {
-            
-            NSLog(@"FAILED to migrate: %@", error);
-        } else {
-            NSLog(@"The source store '%@' has been migrated to the target store '%@'",
-                  sourceStoreFilename, storeFilename);
-            
-            [_context performBlock:^{
-                
-                // Tell the interface to refresh once import completes
-                [self somethingChanged];
-            }];
-        }
-    }];
-    */
+    [self importGroceryDudeTestData];
+    //[self checkIfDefaultDataNeedsImporting];
 }
 
 #pragma mark - SAVING
@@ -611,6 +584,72 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
     }];
 }
 
+#pragma mark – TEST DATA IMPORT (This code is Grocery Dude data specific)
+- (void)importGroceryDudeTestData {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    NSNumber *imported =
+    [[NSUserDefaults standardUserDefaults] objectForKey:@"TestDataImport"];
+    
+    if (!imported.boolValue) {
+        NSLog(@"Importing test data...");
+        [_importContext performBlock:^{
+            
+            NSManagedObject *locationAtHome =
+            [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtHome"
+                                          inManagedObjectContext:_importContext];
+            NSManagedObject *locationAtShop =
+            [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtShop"
+                                          inManagedObjectContext:_importContext];
+            [locationAtHome setValue:@"Test Home Location" forKey:@"storedIn"];
+            [locationAtShop setValue:@"Test Shop Location" forKey:@"aisle"];
+            
+            for (int a = 1; a < 101; a++) {
+                
+                @autoreleasepool {
+                    
+                    // Insert Item
+                    NSManagedObject *item =
+                    [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                                  inManagedObjectContext:_importContext];
+                    [item setValue:[NSString stringWithFormat:@"Test Item %i",a]
+                            forKey:@"name"];
+                    [item setValue:locationAtHome forKey:@"locationAtHome"];
+                    [item setValue:locationAtShop forKey:@"locationAtShop"];
+                    
+                    // Insert Photo
+                    NSManagedObject *photo =
+                    [NSEntityDescription insertNewObjectForEntityForName:@"Item_Photo"
+                                                  inManagedObjectContext:_importContext];
+                    [photo setValue:UIImagePNGRepresentation(
+                                                             [UIImage imageNamed:@"GroceryHead.png"])
+                             forKey:@"data"];
+                    
+                    // Relate Item and Photo
+                    [item setValue:photo forKey:@"photo"];
+                    
+                    NSLog(@"Inserting %@", [item valueForKey:@"name"]);
+                    [CoreDataImporter saveContext:_importContext];
+                    [_importContext refreshObject:item mergeChanges:NO];
+                    [_importContext refreshObject:photo mergeChanges:NO];
+                }
+            }
+            // force table view refresh
+            [self somethingChanged];
+            
+            // ensure import was a one off
+            [[NSUserDefaults standardUserDefaults]
+             setObject:[NSNumber numberWithBool:YES]
+             forKey:@"TestDataImport"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }];
+    }
+    else {
+        NSLog(@"Skipped test data import");
+    }
+}
+
 #pragma mark - DELEGATE: UIAlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (debug==1) {
@@ -654,6 +693,7 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
     [entities addObject:@"Unit"];[attributes addObject:@"name"];
     [entities addObject:@"LocationAtHome"];[attributes addObject:@"storedIn"];
     [entities addObject:@"LocationAtShop"];[attributes addObject:@"aisle"];
+    [entities addObject:@"Item_Photo"];[attributes addObject:@"data"];
     
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:attributes
                                                            forKeys:entities];

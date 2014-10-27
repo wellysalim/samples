@@ -1,18 +1,18 @@
 //
-//  LocationAtHome.m
+//  Item_Photo.m
 //  Grocery Dude
 //
 //  Created by Tim Roadley on 22/09/13.
 //  Copyright (c) 2013 Tim Roadley. All rights reserved.
 //
 
-#import "LocationAtHome.h"
+#import "Item_Photo.h"
 #import "Item.h"
 
 
-@implementation LocationAtHome
+@implementation Item_Photo
 
-@dynamic storedIn;
-@dynamic items;
+@dynamic data;
+@dynamic item;
 
 @end
