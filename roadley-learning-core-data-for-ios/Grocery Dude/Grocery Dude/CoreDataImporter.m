@@ -188,6 +188,10 @@
                           uniqueAttributeValue:uniqueAttributeValue
                                attributeValues:attributeValuesToCopy
                                      inContext:targetContext];
+        // Update modified date as appropriate
+        if ([[[copiedObject entity] attributesByName] objectForKey:@"modified"]) {
+            [copiedObject setValue:[NSDate date] forKey:@"modified"];
+        }
         return copiedObject;
     }
     return nil;

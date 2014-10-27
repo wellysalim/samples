@@ -2,7 +2,7 @@
 //  Item.h
 //  Grocery Dude
 //
-//  Created by Tim Roadley on 22/09/13.
+//  Created by Tim Roadley on 24/09/13.
 //  Copyright (c) 2013 Tim Roadley. All rights reserved.
 //
 
@@ -18,9 +18,10 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * quantity;
 @property (nonatomic, retain) NSData * thumbnail;
+@property (nonatomic, retain) NSDate * modified;
 @property (nonatomic, retain) LocationAtHome *locationAtHome;
 @property (nonatomic, retain) LocationAtShop *locationAtShop;
-@property (nonatomic, retain) Unit *unit;
 @property (nonatomic, retain) Item_Photo *photo;
+@property (nonatomic, retain) Unit *unit;
 
 @end

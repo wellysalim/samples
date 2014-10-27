@@ -19,6 +19,13 @@
 		42649E9817EA540D0011EAAC /* PrepareTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9717EA540D0011EAAC /* PrepareTVC.m */; };
 		42649E9B17EA5D750011EAAC /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9A17EA5D750011EAAC /* ShopTVC.m */; };
 		42860C4F17F0F5DB00775876 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 42860C4E17F0F5DB00775876 /* Settings.bundle */; };
+		42860C5217F0FF9B00775876 /* Deduplicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 42860C5117F0FF9B00775876 /* Deduplicator.m */; };
+		42860C5617F1031800775876 /* LocationAtHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 42860C5517F1031800775876 /* LocationAtHome.m */; };
+		42860C5917F1031900775876 /* Item_Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42860C5817F1031900775876 /* Item_Photo.m */; };
+		42860C5C17F1031900775876 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 42860C5B17F1031900775876 /* Item.m */; };
+		42860C5F17F1031900775876 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 42860C5E17F1031900775876 /* Location.m */; };
+		42860C6217F1031900775876 /* LocationAtShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 42860C6117F1031900775876 /* LocationAtShop.m */; };
+		42860C6517F1031900775876 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 42860C6417F1031900775876 /* Unit.m */; };
 		42A9478717EFA51300EBCCF0 /* Faulter.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A9478617EFA51300EBCCF0 /* Faulter.m */; };
 		42A9478A17EFA73700EBCCF0 /* Thumbnailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A9478917EFA73700EBCCF0 /* Thumbnailer.m */; };
 		42D0482217F029B7008EDC6B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D0482117F029B7008EDC6B /* libc++.dylib */; };
@@ -67,12 +74,6 @@
 		42DA9FB017E8F9EC000E7187 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42DA9FAE17E8F9EC000E7187 /* InfoPlist.strings */; };
 		42DA9FB217E8F9EC000E7187 /* Grocery_DudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DA9FB117E8F9EC000E7187 /* Grocery_DudeTests.m */; };
 		42E063E817EF0C1A00054513 /* Model7toModel8.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 42E063E717EF0C1A00054513 /* Model7toModel8.xcmappingmodel */; };
-		42E063FD17EF0CBA00054513 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E063FC17EF0CBA00054513 /* Item.m */; };
-		42E0640017EF0CBB00054513 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E063FF17EF0CBB00054513 /* Location.m */; };
-		42E0640317EF0CBB00054513 /* LocationAtShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E0640217EF0CBB00054513 /* LocationAtShop.m */; };
-		42E0640617EF0CBB00054513 /* LocationAtHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E0640517EF0CBB00054513 /* LocationAtHome.m */; };
-		42E0640917EF0CBB00054513 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E0640817EF0CBB00054513 /* Unit.m */; };
-		42E0640C17EF0CBB00054513 /* Item_Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E0640B17EF0CBB00054513 /* Item_Photo.m */; };
 		42E0640E17EF0DB600054513 /* DefaultData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 42E0640D17EF0DB600054513 /* DefaultData.sqlite */; };
 		42E8E12C17F059640039CF0C /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E8E12B17F059640039CF0C /* Dropbox.framework */; };
 		42EBEF7617EA98F7000E9046 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEF7517EA98F7000E9046 /* ItemVC.m */; };
@@ -126,6 +127,21 @@
 		42649E9A17EA5D750011EAAC /* ShopTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTVC.m; sourceTree = "<group>"; };
 		42860C4D17F0EB4000775876 /* Grocery Dude.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Grocery Dude.entitlements"; sourceTree = "<group>"; };
 		42860C4E17F0F5DB00775876 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		42860C5017F0FF9B00775876 /* Deduplicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deduplicator.h; sourceTree = "<group>"; };
+		42860C5117F0FF9B00775876 /* Deduplicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deduplicator.m; sourceTree = "<group>"; };
+		42860C5317F1029E00775876 /* Model 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model 9.xcdatamodel"; sourceTree = "<group>"; };
+		42860C5417F1031800775876 /* LocationAtHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtHome.h; sourceTree = "<group>"; };
+		42860C5517F1031800775876 /* LocationAtHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtHome.m; sourceTree = "<group>"; };
+		42860C5717F1031900775876 /* Item_Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item_Photo.h; sourceTree = "<group>"; };
+		42860C5817F1031900775876 /* Item_Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item_Photo.m; sourceTree = "<group>"; };
+		42860C5A17F1031900775876 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		42860C5B17F1031900775876 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		42860C5D17F1031900775876 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		42860C5E17F1031900775876 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		42860C6017F1031900775876 /* LocationAtShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShop.h; sourceTree = "<group>"; };
+		42860C6117F1031900775876 /* LocationAtShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShop.m; sourceTree = "<group>"; };
+		42860C6317F1031900775876 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		42860C6417F1031900775876 /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
 		42A9478517EFA51300EBCCF0 /* Faulter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faulter.h; sourceTree = "<group>"; };
 		42A9478617EFA51300EBCCF0 /* Faulter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faulter.m; sourceTree = "<group>"; };
 		42A9478817EFA73700EBCCF0 /* Thumbnailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thumbnailer.h; sourceTree = "<group>"; };
@@ -208,18 +224,6 @@
 		42E063E217EF094300054513 /* Model 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 7.xcdatamodel"; sourceTree = "<group>"; };
 		42E063E617EF0AC100054513 /* Model 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 8.xcdatamodel"; sourceTree = "<group>"; };
 		42E063E717EF0C1A00054513 /* Model7toModel8.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model7toModel8.xcmappingmodel; sourceTree = "<group>"; };
-		42E063FB17EF0CBA00054513 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		42E063FC17EF0CBA00054513 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		42E063FE17EF0CBB00054513 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		42E063FF17EF0CBB00054513 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		42E0640117EF0CBB00054513 /* LocationAtShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShop.h; sourceTree = "<group>"; };
-		42E0640217EF0CBB00054513 /* LocationAtShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShop.m; sourceTree = "<group>"; };
-		42E0640417EF0CBB00054513 /* LocationAtHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtHome.h; sourceTree = "<group>"; };
-		42E0640517EF0CBB00054513 /* LocationAtHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtHome.m; sourceTree = "<group>"; };
-		42E0640717EF0CBB00054513 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
-		42E0640817EF0CBB00054513 /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
-		42E0640A17EF0CBB00054513 /* Item_Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item_Photo.h; sourceTree = "<group>"; };
-		42E0640B17EF0CBB00054513 /* Item_Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item_Photo.m; sourceTree = "<group>"; };
 		42E0640D17EF0DB600054513 /* DefaultData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DefaultData.sqlite; sourceTree = "<group>"; };
 		42E8E12B17F059640039CF0C /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
 		42EBEF7417EA98F7000E9046 /* ItemVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemVC.h; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 				42A9478617EFA51300EBCCF0 /* Faulter.m */,
 				42A9478817EFA73700EBCCF0 /* Thumbnailer.h */,
 				42A9478917EFA73700EBCCF0 /* Thumbnailer.m */,
+				42860C5017F0FF9B00775876 /* Deduplicator.h */,
+				42860C5117F0FF9B00775876 /* Deduplicator.m */,
 			);
 			name = "Generic Core Data Classes";
 			sourceTree = "<group>";
@@ -321,19 +327,19 @@
 			children = (
 				42E0640D17EF0DB600054513 /* DefaultData.sqlite */,
 				42EBEFD717EB1AE1000E9046 /* DefaultData.xml */,
-				42E063FB17EF0CBA00054513 /* Item.h */,
-				42E0640A17EF0CBB00054513 /* Item_Photo.h */,
-				42E0640B17EF0CBB00054513 /* Item_Photo.m */,
-				42E0640717EF0CBB00054513 /* Unit.h */,
-				42E0640817EF0CBB00054513 /* Unit.m */,
-				42E0640417EF0CBB00054513 /* LocationAtHome.h */,
-				42E0640517EF0CBB00054513 /* LocationAtHome.m */,
-				42E0640117EF0CBB00054513 /* LocationAtShop.h */,
-				42E0640217EF0CBB00054513 /* LocationAtShop.m */,
-				42E063FE17EF0CBB00054513 /* Location.h */,
-				42E063FF17EF0CBB00054513 /* Location.m */,
-				42E063FC17EF0CBA00054513 /* Item.m */,
 				424F398D17E946D40051A624 /* Model.xcdatamodeld */,
+				42860C5417F1031800775876 /* LocationAtHome.h */,
+				42860C5517F1031800775876 /* LocationAtHome.m */,
+				42860C5717F1031900775876 /* Item_Photo.h */,
+				42860C5817F1031900775876 /* Item_Photo.m */,
+				42860C5A17F1031900775876 /* Item.h */,
+				42860C5B17F1031900775876 /* Item.m */,
+				42860C5D17F1031900775876 /* Location.h */,
+				42860C5E17F1031900775876 /* Location.m */,
+				42860C6017F1031900775876 /* LocationAtShop.h */,
+				42860C6117F1031900775876 /* LocationAtShop.m */,
+				42860C6317F1031900775876 /* Unit.h */,
+				42860C6417F1031900775876 /* Unit.m */,
 				4205CD0B17E9951400E1FDB1 /* Model2toModel3.xcmappingmodel */,
 				4205CD1517E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel */,
 				42E063E717EF0C1A00054513 /* Model7toModel8.xcmappingmodel */,
@@ -654,8 +660,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				42EBEF7617EA98F7000E9046 /* ItemVC.m in Sources */,
-				42E0640917EF0CBB00054513 /* Unit.m in Sources */,
-				42E0640617EF0CBB00054513 /* LocationAtHome.m in Sources */,
 				42D0482D17F02B0E008EDC6B /* DropboxHelper.m in Sources */,
 				42EBEFD317EB0BCD000E9046 /* LocationAtHomePickerTF.m in Sources */,
 				42EBEFCC17EAD70B000E9046 /* CoreDataPickerTF.m in Sources */,
@@ -663,6 +667,7 @@
 				42D0494E17F0571D008EDC6B /* unzip.c in Sources */,
 				42DA9F9D17E8F9EB000E7187 /* ViewController.m in Sources */,
 				42EBEFBA17EAC939000E9046 /* UnitsTVC.m in Sources */,
+				42860C5C17F1031900775876 /* Item.m in Sources */,
 				42D0495A17F0571D008EDC6B /* gzread.c in Sources */,
 				42A9478717EFA51300EBCCF0 /* Faulter.m in Sources */,
 				42EBEFBD17EACA38000E9046 /* UnitVC.m in Sources */,
@@ -678,6 +683,7 @@
 				42D0495E17F0571D008EDC6B /* inflate.c in Sources */,
 				42EBEFC317EACD0D000E9046 /* LocationsAtShopTVC.m in Sources */,
 				42D0496217F0571D008EDC6B /* zutil.c in Sources */,
+				42860C6217F1031900775876 /* LocationAtShop.m in Sources */,
 				42EBEFD617EB0C0B000E9046 /* LocationAtShopPickerTF.m in Sources */,
 				42D0495F17F0571D008EDC6B /* inftrees.c in Sources */,
 				42D0495517F0571D008EDC6B /* compress.c in Sources */,
@@ -687,16 +693,17 @@
 				42EBEFC817EACD1B000E9046 /* LocationAtHomeVC.m in Sources */,
 				42649E9417EA4CCA0011EAAC /* CoreDataTVC.m in Sources */,
 				42E063E817EF0C1A00054513 /* Model7toModel8.xcmappingmodel in Sources */,
-				42E063FD17EF0CBA00054513 /* Item.m in Sources */,
 				42D0496017F0571D008EDC6B /* trees.c in Sources */,
 				42D0494C17F0571D008EDC6B /* ioapi.c in Sources */,
 				42D0495917F0571D008EDC6B /* gzlib.c in Sources */,
 				424F398F17E946D40051A624 /* Model.xcdatamodeld in Sources */,
 				4235180617E90C1F00489190 /* CoreDataHelper.m in Sources */,
+				42860C5917F1031900775876 /* Item_Photo.m in Sources */,
 				42D0494B17F0571D008EDC6B /* FileInZipInfo.m in Sources */,
 				42D0483017F02BE3008EDC6B /* DropboxTVC.m in Sources */,
-				42E0640317EF0CBB00054513 /* LocationAtShop.m in Sources */,
+				42860C5217F0FF9B00775876 /* Deduplicator.m in Sources */,
 				4205CD0C17E9951400E1FDB1 /* Model2toModel3.xcmappingmodel in Sources */,
+				42860C5F17F1031900775876 /* Location.m in Sources */,
 				4205CD0617E992F200E1FDB1 /* Measurement.m in Sources */,
 				42EBEFC917EACD1B000E9046 /* LocationAtShopVC.m in Sources */,
 				42DA9F9317E8F9EB000E7187 /* main.m in Sources */,
@@ -704,15 +711,15 @@
 				42EBEFC217EACD0D000E9046 /* LocationsAtHomeTVC.m in Sources */,
 				4205CD0A17E994B500E1FDB1 /* Amount.m in Sources */,
 				42D0495C17F0571D008EDC6B /* infback.c in Sources */,
+				42860C6517F1031900775876 /* Unit.m in Sources */,
 				42EBEFDB17EBA0ED000E9046 /* CoreDataImporter.m in Sources */,
 				42D0495217F0571D008EDC6B /* ZipReadStream.m in Sources */,
 				4205CD1617E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel in Sources */,
 				42EBEFD017EB0875000E9046 /* UnitPickerTF.m in Sources */,
 				42649E9B17EA5D750011EAAC /* ShopTVC.m in Sources */,
-				42E0640017EF0CBB00054513 /* Location.m in Sources */,
 				42D0495417F0571D008EDC6B /* adler32.c in Sources */,
-				42E0640C17EF0CBB00054513 /* Item_Photo.m in Sources */,
 				42D0494D17F0571D008EDC6B /* mztools.c in Sources */,
+				42860C5617F1031800775876 /* LocationAtHome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +951,7 @@
 		424F398D17E946D40051A624 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				42860C5317F1029E00775876 /* Model 9.xcdatamodel */,
 				42E063E617EF0AC100054513 /* Model 8.xcdatamodel */,
 				42E063E217EF094300054513 /* Model 7.xcdatamodel */,
 				42649E7317E9CFA30011EAAC /* Model 6.xcdatamodel */,
@@ -953,7 +961,7 @@
 				4205CD0017E9909500E1FDB1 /* Model 2.xcdatamodel */,
 				424F398E17E946D40051A624 /* Model.xcdatamodel */,
 			);
-			currentVersion = 42E063E617EF0AC100054513 /* Model 8.xcdatamodel */;
+			currentVersion = 42860C5317F1029E00775876 /* Model 9.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

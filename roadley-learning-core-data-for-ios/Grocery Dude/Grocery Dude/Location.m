@@ -2,7 +2,7 @@
 //  Location.m
 //  Grocery Dude
 //
-//  Created by Tim Roadley on 22/09/13.
+//  Created by Tim Roadley on 24/09/13.
 //  Copyright (c) 2013 Tim Roadley. All rights reserved.
 //
 
@@ -12,5 +12,6 @@
 @implementation Location
 
 @dynamic summary;
+@dynamic modified;
 
 @end

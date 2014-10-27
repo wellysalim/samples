@@ -24,6 +24,12 @@
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *sourceCoordinator;
 @property (nonatomic, readonly) NSPersistentStore            *sourceStore;
 
+@property (nonatomic, readonly) NSManagedObjectContext       *seedContext;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator *seedCoordinator;
+@property (nonatomic, readonly) NSPersistentStore            *seedStore;
+@property (nonatomic, retain)   UIAlertView                  *seedAlertView;
+@property (nonatomic)           BOOL                          seedInProgress;
+
 @property (nonatomic, readonly) NSPersistentStore            *iCloudStore;
 
 @property (nonatomic, retain) MigrationVC *migrationVC;
@@ -42,4 +48,6 @@
 
 - (BOOL)iCloudAccountIsSignedIn;
 - (void)ensureAppropriateStoreIsLoaded;
+- (BOOL)iCloudEnabledByUser;
+
 @end

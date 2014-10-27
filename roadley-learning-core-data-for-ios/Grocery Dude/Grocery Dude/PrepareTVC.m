@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "ItemVC.h"
 #import "Thumbnailer.h"
+#import "Deduplicator.h"
 
 @implementation PrepareTVC
 #define debug 0
@@ -68,6 +69,24 @@
                                withPhotoAttributeName:@"data"
                                   withSortDescriptors:sortDescriptors
                                     withImportContext:cdh.importContext];
+    
+    [cdh.context performBlock:^{
+        [Deduplicator deDuplicateEntityWithName:@"Item"
+                        withUniqueAttributeName:@"name"
+                              withImportContext:cdh.context];
+        
+        [Deduplicator deDuplicateEntityWithName:@"Unit"
+                        withUniqueAttributeName:@"name"
+                              withImportContext:cdh.context];
+        
+        [Deduplicator deDuplicateEntityWithName:@"LocationAtHome"
+                        withUniqueAttributeName:@"storedIn"
+                              withImportContext:cdh.context];
+        
+        [Deduplicator deDuplicateEntityWithName:@"LocationAtShop"
+                        withUniqueAttributeName:@"aisle"
+                              withImportContext:cdh.context];
+    }];
 }
 - (void)viewDidLoad {
     if (debug==1) {

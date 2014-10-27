@@ -2,7 +2,7 @@
 //  Unit.h
 //  Grocery Dude
 //
-//  Created by Tim Roadley on 22/09/13.
+//  Created by Tim Roadley on 24/09/13.
 //  Copyright (c) 2013 Tim Roadley. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 @interface Unit : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSDate * modified;
 @property (nonatomic, retain) NSSet *items;
 @end
 

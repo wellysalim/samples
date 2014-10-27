@@ -2,7 +2,7 @@
 //  Item.m
 //  Grocery Dude
 //
-//  Created by Tim Roadley on 22/09/13.
+//  Created by Tim Roadley on 24/09/13.
 //  Copyright (c) 2013 Tim Roadley. All rights reserved.
 //
 
@@ -20,9 +20,10 @@
 @dynamic name;
 @dynamic quantity;
 @dynamic thumbnail;
+@dynamic modified;
 @dynamic locationAtHome;
 @dynamic locationAtShop;
-@dynamic unit;
 @dynamic photo;
+@dynamic unit;
 
 @end

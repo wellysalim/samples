@@ -77,7 +77,8 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
-#warning To Enable Dropbox, substitute your APP_KEY and APP_SECRET below and db-APP_KEY in /Supporting Files/Grocery Dude-Info.plist > URL Types
+#warning To Enable Dropbox, substitute your APP_KEY and APP_SECRET below, then edit db-APP_KEY in /Supporting Files/Grocery Dude-Info.plist > URL Types. See Chapter 13 of 'Learning Core Data for iOS' by Tim Roadley for more information. Note that the Dropbox backup and restore capability is disabled when iCloud is enabled in Settings > Grocery Dude > iCloud.
+    
     DBAccountManager* accountMgr =
     [[DBAccountManager alloc] initWithAppKey:@"APP_KEY" secret:@"APP_SECRET"];
     [DBAccountManager setSharedManager:accountMgr];
