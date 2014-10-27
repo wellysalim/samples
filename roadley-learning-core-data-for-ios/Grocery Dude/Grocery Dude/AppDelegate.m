@@ -7,9 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "Item.h"
 
 @implementation AppDelegate
 #define debug 1
+
+- (void)demo {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+
+}
 
 - (CoreDataHelper*)cdh {
     if (debug==1) {
@@ -63,7 +71,8 @@
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self cdh];
+    [self demo];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

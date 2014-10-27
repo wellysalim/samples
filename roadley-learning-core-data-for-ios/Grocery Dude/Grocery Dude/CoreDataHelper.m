@@ -73,11 +73,15 @@ NSString *storeFilename = @"Grocery-Dude.sqlite";
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if (_store) {return;} // Don’t load store if it's already loaded
+    
+    NSDictionary *options =
+  @{NSSQLitePragmasOption: @{@"journal_mode": @"DELETE"}};
+    
     NSError *error = nil;
     _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
                                         configuration:nil
                                                   URL:[self storeURL]
-                                              options:nil error:&error];
+                                              options:options error:&error];
     if (!_store) {NSLog(@"Failed to add store. Error: %@", error);abort();}
     else         {if (debug==1) {NSLog(@"Successfully added store: %@", _store);}}
 }
