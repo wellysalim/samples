@@ -82,7 +82,7 @@
     }
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    [[self cdh] saveContext];
+    [[self cdh] backgroundSaveContext];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -108,7 +108,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [[self cdh] saveContext];
+    [[self cdh] backgroundSaveContext];
 }
 
 @end

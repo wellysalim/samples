@@ -9,8 +9,10 @@
 #import "UnitVC.h"
 #import "Unit.h"
 #import "AppDelegate.h"
+
 @implementation UnitVC
 #define debug 1
+
 #pragma mark - VIEW
 - (void)refreshInterface {
     if (debug==1) {
@@ -39,6 +41,17 @@
     }
     [self refreshInterface];
     [self.nameTextField becomeFirstResponder];
+}
+- (void)viewDidDisappear:(BOOL)animated {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    CoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged"
+                                                        object:nil
+                                                      userInfo:nil];
 }
 
 #pragma mark - TEXTFIELD
@@ -83,5 +96,4 @@
     }
     [self.view endEditing:YES];
 }
-
 @end

@@ -128,25 +128,22 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if (self.selectedItemID) {
-        CoreDataHelper *cdh =
-        [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
-        Item *item =
-        (Item*)[cdh.context existingObjectWithID:self.selectedItemID
-                                           error:nil];
+        CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        Item *item = (Item*)[cdh.context existingObjectWithID:self.selectedItemID error:nil];
         self.nameTextField.text = item.name;
         self.quantityTextField.text = item.quantity.stringValue;
         self.unitPickerTextField.text = item.unit.name;
         self.unitPickerTextField.selectedObjectID = item.unit.objectID;
-        self.homeLocationPickerTextField.text =
-        item.locationAtHome.storedIn;
-        self.homeLocationPickerTextField.selectedObjectID =
-        item.locationAtHome.objectID;
-        self.shopLocationPickerTextField.text =
-        item.locationAtShop.aisle;
-        self.shopLocationPickerTextField.selectedObjectID =
-        item.locationAtShop.objectID;
+        self.homeLocationPickerTextField.text = item.locationAtHome.storedIn;
+        self.homeLocationPickerTextField.selectedObjectID = item.locationAtHome.objectID;
+        self.shopLocationPickerTextField.text = item.locationAtShop.aisle;
+        self.shopLocationPickerTextField.selectedObjectID = item.locationAtShop.objectID;
         
-        self.photoImageView.image = [UIImage imageWithData:item.photo.data];
+        [cdh.context performBlock:^{
+            self.photoImageView.image =
+            [UIImage imageWithData:item.photo.data];
+        }];
+        
         [self checkCamera];
     }
 }
@@ -199,7 +196,7 @@
 
     CoreDataHelper *cdh =
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
-    [cdh saveContext];
+    [cdh backgroundSaveContext];
     
     // Unregister for keyboard notifications while the view is not visible.
     [[NSNotificationCenter defaultCenter] removeObserver:self
@@ -425,6 +422,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
         item.photo = newPhoto;
     }
     item.photo.data = UIImageJPEGRepresentation(photo, 0.5);
+    item.thumbnail = nil;
     
     self.photoImageView.image = photo;
     

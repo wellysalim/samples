@@ -18,6 +18,8 @@
 		42649E9417EA4CCA0011EAAC /* CoreDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9317EA4CCA0011EAAC /* CoreDataTVC.m */; };
 		42649E9817EA540D0011EAAC /* PrepareTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9717EA540D0011EAAC /* PrepareTVC.m */; };
 		42649E9B17EA5D750011EAAC /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9A17EA5D750011EAAC /* ShopTVC.m */; };
+		42A9478717EFA51300EBCCF0 /* Faulter.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A9478617EFA51300EBCCF0 /* Faulter.m */; };
+		42A9478A17EFA73700EBCCF0 /* Thumbnailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A9478917EFA73700EBCCF0 /* Thumbnailer.m */; };
 		42DA9F8717E8F9EB000E7187 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA9F8617E8F9EB000E7187 /* Foundation.framework */; };
 		42DA9F8917E8F9EB000E7187 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA9F8817E8F9EB000E7187 /* CoreGraphics.framework */; };
 		42DA9F8B17E8F9EB000E7187 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA9F8A17E8F9EB000E7187 /* UIKit.framework */; };
@@ -89,6 +91,10 @@
 		42649E9717EA540D0011EAAC /* PrepareTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareTVC.m; sourceTree = "<group>"; };
 		42649E9917EA5D750011EAAC /* ShopTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTVC.h; sourceTree = "<group>"; };
 		42649E9A17EA5D750011EAAC /* ShopTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTVC.m; sourceTree = "<group>"; };
+		42A9478517EFA51300EBCCF0 /* Faulter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faulter.h; sourceTree = "<group>"; };
+		42A9478617EFA51300EBCCF0 /* Faulter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faulter.m; sourceTree = "<group>"; };
+		42A9478817EFA73700EBCCF0 /* Thumbnailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thumbnailer.h; sourceTree = "<group>"; };
+		42A9478917EFA73700EBCCF0 /* Thumbnailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thumbnailer.m; sourceTree = "<group>"; };
 		42DA9F8317E8F9EB000E7187 /* Grocery Dude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Dude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA9F8617E8F9EB000E7187 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42DA9F8817E8F9EB000E7187 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -108,8 +114,8 @@
 		42DA9FAD17E8F9EC000E7187 /* Grocery DudeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Grocery DudeTests-Info.plist"; sourceTree = "<group>"; };
 		42DA9FAF17E8F9EC000E7187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42DA9FB117E8F9EC000E7187 /* Grocery_DudeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Grocery_DudeTests.m; sourceTree = "<group>"; };
-		42E063E217EF094300054513 /* Model 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model 7.xcdatamodel"; sourceTree = "<group>"; };
-		42E063E617EF0AC100054513 /* Model 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model 8.xcdatamodel"; sourceTree = "<group>"; };
+		42E063E217EF094300054513 /* Model 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 7.xcdatamodel"; sourceTree = "<group>"; };
+		42E063E617EF0AC100054513 /* Model 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 8.xcdatamodel"; sourceTree = "<group>"; };
 		42E063E717EF0C1A00054513 /* Model7toModel8.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model7toModel8.xcmappingmodel; sourceTree = "<group>"; };
 		42E063FB17EF0CBA00054513 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		42E063FC17EF0CBA00054513 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
@@ -204,6 +210,10 @@
 				42EBEFCB17EAD70B000E9046 /* CoreDataPickerTF.m */,
 				42EBEFD917EBA0ED000E9046 /* CoreDataImporter.h */,
 				42EBEFDA17EBA0ED000E9046 /* CoreDataImporter.m */,
+				42A9478517EFA51300EBCCF0 /* Faulter.h */,
+				42A9478617EFA51300EBCCF0 /* Faulter.m */,
+				42A9478817EFA73700EBCCF0 /* Thumbnailer.h */,
+				42A9478917EFA73700EBCCF0 /* Thumbnailer.m */,
 			);
 			name = "Generic Core Data Classes";
 			sourceTree = "<group>";
@@ -452,9 +462,11 @@
 				42EBEFCC17EAD70B000E9046 /* CoreDataPickerTF.m in Sources */,
 				42DA9F9D17E8F9EB000E7187 /* ViewController.m in Sources */,
 				42EBEFBA17EAC939000E9046 /* UnitsTVC.m in Sources */,
+				42A9478717EFA51300EBCCF0 /* Faulter.m in Sources */,
 				42EBEFBD17EACA38000E9046 /* UnitVC.m in Sources */,
 				42DA9F9717E8F9EB000E7187 /* AppDelegate.m in Sources */,
 				4205CD1017E998E500E1FDB1 /* MigrationVC.m in Sources */,
+				42A9478A17EFA73700EBCCF0 /* Thumbnailer.m in Sources */,
 				42EBEFC317EACD0D000E9046 /* LocationsAtShopTVC.m in Sources */,
 				42EBEFD617EB0C0B000E9046 /* LocationAtShopPickerTF.m in Sources */,
 				42649E9817EA540D0011EAAC /* PrepareTVC.m in Sources */,

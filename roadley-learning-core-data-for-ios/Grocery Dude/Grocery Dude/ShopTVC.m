@@ -12,6 +12,7 @@
 #import "Unit.h"
 #import "AppDelegate.h"
 #import "ItemVC.h"
+#import "Thumbnailer.h"
 
 @implementation ShopTVC
 #define debug 0
@@ -44,6 +45,30 @@
 }
 
 #pragma mark - VIEW
+- (void)viewDidAppear:(BOOL)animated {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [super viewDidAppear:animated];
+    
+    // Create missing Thumbnails
+    CoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    NSArray *sortDescriptors =
+    [NSArray arrayWithObjects:
+     [NSSortDescriptor sortDescriptorWithKey:@"locationAtHome.storedIn"
+                                   ascending:YES],
+     [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                   ascending:YES],
+     nil];
+    
+    [Thumbnailer createMissingThumbnailsForEntityName:@"Item"
+                           withThumbnailAttributeName:@"thumbnail"
+                            withPhotoRelationshipName:@"photo"
+                               withPhotoAttributeName:@"data"
+                                  withSortDescriptors:sortDescriptors
+                                    withImportContext:cdh.importContext];
+}
 - (void)viewDidLoad {
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -119,6 +144,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
     [self.tableView reloadRowsAtIndexPaths:
      [NSArray  arrayWithObject:indexPath]
                           withRowAnimation:UITableViewRowAnimationNone];
+
+    CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication
+                                            sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
 }
 
 #pragma mark - INTERACTION
@@ -153,6 +182,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
                                   delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     }
+    CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication
+                                            sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
 }
 
 #pragma mark - SEGUE

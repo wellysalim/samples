@@ -8,6 +8,7 @@
 
 #import "CoreDataHelper.h"
 #import "CoreDataImporter.h"
+#import "Faulter.h"
 
 @implementation CoreDataHelper
 #define debug 1
@@ -72,25 +73,30 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
     if (!self) {return nil;}
     
     _model = [NSManagedObjectModel mergedModelFromBundles:nil];
-    _coordinator = [[NSPersistentStoreCoordinator alloc]
-                    initWithManagedObjectModel:_model];
-    _context = [[NSManagedObjectContext alloc]
-                initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [_context setPersistentStoreCoordinator:_coordinator];
+    _coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
+    
+    _parentContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [_parentContext performBlockAndWait:^{
+        [_parentContext setPersistentStoreCoordinator:_coordinator];
+        [_parentContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+    }];
+    
+    _context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    [_context setParentContext:_parentContext];
     [_context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
     
     _importContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [_importContext performBlockAndWait:^{
-        [_importContext setPersistentStoreCoordinator:_coordinator];
+        [_importContext setParentContext:_context];
         [_importContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
         [_importContext setUndoManager:nil]; // the default on iOS
     }];
     
-    _sourceCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
+    //_sourceCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
     _sourceContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [_sourceContext performBlockAndWait:^{
         [_sourceContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
-        [_sourceContext setPersistentStoreCoordinator:_sourceCoordinator];
+        [_sourceContext setParentContext:_context];
         [_sourceContext setUndoManager:nil]; // the default on iOS
     }];
     return self;
@@ -153,9 +159,9 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    //[self setDefaultDataStoreAsInitialStore];
+    [self setDefaultDataStoreAsInitialStore];
     [self loadStore];
-    [self importGroceryDudeTestData];
+    //[self importGroceryDudeTestData];
     //[self checkIfDefaultDataNeedsImporting];
 }
 
@@ -175,6 +181,30 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
     } else {
         NSLog(@"SKIPPED _context save, there are no changes!");
     }
+}
+- (void)backgroundSaveContext {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    // First, save the child context in the foreground (fast, all in memory)
+    [self saveContext];
+    
+    // Then, save the parent context.
+    [_parentContext performBlock:^{
+        if ([_parentContext hasChanges]) {
+            NSError *error = nil;
+            if ([_parentContext save:&error]) {
+                NSLog(@"_parentContext SAVED changes to persistent store");
+            }
+            else {
+                NSLog(@"_parentContext FAILED to save: %@", error);
+                [self showValidationError:error];
+            }
+        }
+        else {
+            NSLog(@"_parentContext SKIPPED saving as there are no changes");
+        }
+    }];
 }
 
 #pragma mark - MIGRATION MANAGER
@@ -615,8 +645,10 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
                                                   inManagedObjectContext:_importContext];
                     [item setValue:[NSString stringWithFormat:@"Test Item %i",a]
                             forKey:@"name"];
-                    [item setValue:locationAtHome forKey:@"locationAtHome"];
-                    [item setValue:locationAtShop forKey:@"locationAtShop"];
+                    [item setValue:locationAtHome
+                            forKey:@"locationAtHome"];
+                    [item setValue:locationAtShop
+                            forKey:@"locationAtShop"];
                     
                     // Insert Photo
                     NSManagedObject *photo =
@@ -630,13 +662,13 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
                     [item setValue:photo forKey:@"photo"];
                     
                     NSLog(@"Inserting %@", [item valueForKey:@"name"]);
-                    [CoreDataImporter saveContext:_importContext];
-                    [_importContext refreshObject:item mergeChanges:NO];
-                    [_importContext refreshObject:photo mergeChanges:NO];
+                    [Faulter faultObjectWithID:photo.objectID
+                                     inContext:_importContext];
+                    [Faulter faultObjectWithID:item.objectID
+                                     inContext:_importContext];
                 }
             }
-            // force table view refresh
-            [self somethingChanged];
+            [_importContext reset];
             
             // ensure import was a one off
             [[NSUserDefaults standardUserDefaults]
@@ -659,18 +691,15 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
         if (buttonIndex == 1) { // The ‘Import’ button on the importAlertView
             
             NSLog(@"Default Data Import Approved by User");
-            /*
-             // XML Import
-             [_importContext performBlock:^{
-             [self importFromXML:[[NSBundle mainBundle]
-             URLForResource:@"DefaultData"
-             withExtension:@"xml"]];
-             }];
-             */
-            
+            // XML Import
+            [_importContext performBlock:^{
+                [self importFromXML:[[NSBundle mainBundle]
+                                     URLForResource:@"DefaultData"
+                                     withExtension:@"xml"]];
+            }];
             // Deep Copy Import From Persistent Store
-            [self loadSourceStore];
-            [self deepCopyFromPersistentStore:[self sourceStoreURL]];
+            //[self loadSourceStore];
+            //[self deepCopyFromPersistentStore:[self sourceStoreURL]];
             
         } else {
             NSLog(@"Default Data Import Cancelled by User");
@@ -767,10 +796,10 @@ didStartElement:(NSString *)elementName
             [CoreDataImporter saveContext:_importContext];
             
             // STEP 7: Turn objects into faults to save memory
-            [_importContext refreshObject:item mergeChanges:NO];
-            [_importContext refreshObject:unit mergeChanges:NO];
-            [_importContext refreshObject:locationAtHome mergeChanges:NO];
-            [_importContext refreshObject:locationAtShop mergeChanges:NO];
+            [Faulter faultObjectWithID:item.objectID inContext:_importContext];
+            [Faulter faultObjectWithID:unit.objectID inContext:_importContext];
+            [Faulter faultObjectWithID:locationAtHome.objectID inContext:_importContext];
+            [Faulter faultObjectWithID:locationAtShop.objectID inContext:_importContext];
         }
     }];
 }

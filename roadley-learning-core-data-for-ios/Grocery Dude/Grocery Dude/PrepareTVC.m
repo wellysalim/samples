@@ -12,6 +12,7 @@
 #import "Unit.h"
 #import "AppDelegate.h"
 #import "ItemVC.h"
+#import "Thumbnailer.h"
 
 @implementation PrepareTVC
 #define debug 0
@@ -44,6 +45,30 @@
 }
 
 #pragma mark - VIEW
+- (void)viewDidAppear:(BOOL)animated {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [super viewDidAppear:animated];
+    
+    // Create missing Thumbnails
+    CoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    NSArray *sortDescriptors =
+    [NSArray arrayWithObjects:
+     [NSSortDescriptor sortDescriptorWithKey:@"locationAtHome.storedIn"
+                                   ascending:YES],
+     [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                   ascending:YES],
+     nil];
+    
+    [Thumbnailer createMissingThumbnailsForEntityName:@"Item"
+                           withThumbnailAttributeName:@"thumbnail"
+                            withPhotoRelationshipName:@"photo"
+                               withPhotoAttributeName:@"data"
+                                  withSortDescriptors:sortDescriptors
+                                    withImportContext:cdh.importContext];
+}
 - (void)viewDidLoad {
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -111,6 +136,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                               withRowAnimation:UITableViewRowAnimationFade];
     }
+    
+    CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication
+                                            sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
 }
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
@@ -167,6 +196,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
         [alert show];
     }
     shoppingList = nil;
+    [cdh backgroundSaveContext];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet
 clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -196,6 +226,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     for (Item *item in shoppingList) {
         item.listed = [NSNumber numberWithBool:NO];
     }
+    [cdh backgroundSaveContext];
 }
 
 #pragma mark - SEGUE
