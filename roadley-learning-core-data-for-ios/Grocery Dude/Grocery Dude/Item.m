@@ -7,6 +7,9 @@
 //
 
 #import "Item.h"
+#import "LocationAtHome.h"
+#import "LocationAtShop.h"
+#import "Unit.h"
 
 
 @implementation Item
@@ -16,5 +19,8 @@
 @dynamic name;
 @dynamic photoData;
 @dynamic quantity;
+@dynamic unit;
+@dynamic locationAtHome;
+@dynamic locationAtShop;
 
 @end

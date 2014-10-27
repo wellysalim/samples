@@ -1,18 +1,18 @@
 //
-//  Unit.m
+//  LocationAtShop.m
 //  Grocery Dude
 //
 //  Created by Tim Roadley on 18/09/13.
 //  Copyright (c) 2013 Tim Roadley. All rights reserved.
 //
 
-#import "Unit.h"
+#import "LocationAtShop.h"
 #import "Item.h"
 
 
-@implementation Unit
+@implementation LocationAtShop
 
-@dynamic name;
+@dynamic aisle;
 @dynamic items;
 
 @end

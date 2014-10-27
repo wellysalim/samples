@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4205CD0317E992F100E1FDB1 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4205CD0217E992F100E1FDB1 /* Item.m */; };
 		4205CD0617E992F200E1FDB1 /* Measurement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4205CD0517E992F200E1FDB1 /* Measurement.m */; };
 		4205CD0A17E994B500E1FDB1 /* Amount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4205CD0917E994B500E1FDB1 /* Amount.m */; };
 		4205CD0C17E9951400E1FDB1 /* Model2toModel3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4205CD0B17E9951400E1FDB1 /* Model2toModel3.xcmappingmodel */; };
 		4205CD1017E998E500E1FDB1 /* MigrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4205CD0F17E998E500E1FDB1 /* MigrationVC.m */; };
-		4205CD1417E9B55500E1FDB1 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4205CD1317E9B55500E1FDB1 /* Unit.m */; };
 		4205CD1617E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4205CD1517E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel */; };
 		423517B817E9074100489190 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423517B717E9074100489190 /* CoreData.framework */; };
 		4235180617E90C1F00489190 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4235180517E90C1F00489190 /* CoreDataHelper.m */; };
 		424F398F17E946D40051A624 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 424F398D17E946D40051A624 /* Model.xcdatamodeld */; };
+		42649E8517E9D1AE0011EAAC /* LocationAtHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E8417E9D1AE0011EAAC /* LocationAtHome.m */; };
+		42649E8817E9D1AE0011EAAC /* LocationAtShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E8717E9D1AE0011EAAC /* LocationAtShop.m */; };
+		42649E8B17E9D1AF0011EAAC /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E8A17E9D1AF0011EAAC /* Item.m */; };
+		42649E8E17E9D1AF0011EAAC /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E8D17E9D1AF0011EAAC /* Unit.m */; };
+		42649E9117E9D1AF0011EAAC /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 42649E9017E9D1AF0011EAAC /* Location.m */; };
 		42DA9F8717E8F9EB000E7187 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA9F8617E8F9EB000E7187 /* Foundation.framework */; };
 		42DA9F8917E8F9EB000E7187 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA9F8817E8F9EB000E7187 /* CoreGraphics.framework */; };
 		42DA9F8B17E8F9EB000E7187 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA9F8A17E8F9EB000E7187 /* UIKit.framework */; };
@@ -45,8 +48,6 @@
 
 /* Begin PBXFileReference section */
 		4205CD0017E9909500E1FDB1 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
-		4205CD0117E992F100E1FDB1 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		4205CD0217E992F100E1FDB1 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		4205CD0417E992F200E1FDB1 /* Measurement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Measurement.h; sourceTree = "<group>"; };
 		4205CD0517E992F200E1FDB1 /* Measurement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Measurement.m; sourceTree = "<group>"; };
 		4205CD0717E9943500E1FDB1 /* Model 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -56,13 +57,23 @@
 		4205CD0E17E998E500E1FDB1 /* MigrationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrationVC.h; sourceTree = "<group>"; };
 		4205CD0F17E998E500E1FDB1 /* MigrationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrationVC.m; sourceTree = "<group>"; };
 		4205CD1117E9B51C00E1FDB1 /* Model 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 4.xcdatamodel"; sourceTree = "<group>"; };
-		4205CD1217E9B55500E1FDB1 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
-		4205CD1317E9B55500E1FDB1 /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
 		4205CD1517E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model3toModel4.xcmappingmodel; sourceTree = "<group>"; };
 		423517B717E9074100489190 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4235180417E90C1F00489190 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		4235180517E90C1F00489190 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		424F398E17E946D40051A624 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		42649E6C17E9B9380011EAAC /* Model 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model 5.xcdatamodel"; sourceTree = "<group>"; };
+		42649E7317E9CFA30011EAAC /* Model 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model 6.xcdatamodel"; sourceTree = "<group>"; };
+		42649E8317E9D1AE0011EAAC /* LocationAtHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtHome.h; sourceTree = "<group>"; };
+		42649E8417E9D1AE0011EAAC /* LocationAtHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtHome.m; sourceTree = "<group>"; };
+		42649E8617E9D1AE0011EAAC /* LocationAtShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShop.h; sourceTree = "<group>"; };
+		42649E8717E9D1AE0011EAAC /* LocationAtShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShop.m; sourceTree = "<group>"; };
+		42649E8917E9D1AF0011EAAC /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		42649E8A17E9D1AF0011EAAC /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		42649E8C17E9D1AF0011EAAC /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		42649E8D17E9D1AF0011EAAC /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
+		42649E8F17E9D1AF0011EAAC /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		42649E9017E9D1AF0011EAAC /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		42DA9F8317E8F9EB000E7187 /* Grocery Dude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Dude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA9F8617E8F9EB000E7187 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42DA9F8817E8F9EB000E7187 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,12 +144,18 @@
 				424F398D17E946D40051A624 /* Model.xcdatamodeld */,
 				4205CD0B17E9951400E1FDB1 /* Model2toModel3.xcmappingmodel */,
 				4205CD1517E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel */,
-				4205CD1217E9B55500E1FDB1 /* Unit.h */,
-				4205CD1317E9B55500E1FDB1 /* Unit.m */,
+				42649E8F17E9D1AF0011EAAC /* Location.h */,
+				42649E9017E9D1AF0011EAAC /* Location.m */,
+				42649E8C17E9D1AF0011EAAC /* Unit.h */,
+				42649E8D17E9D1AF0011EAAC /* Unit.m */,
+				42649E8917E9D1AF0011EAAC /* Item.h */,
+				42649E8A17E9D1AF0011EAAC /* Item.m */,
+				42649E8617E9D1AE0011EAAC /* LocationAtShop.h */,
+				42649E8717E9D1AE0011EAAC /* LocationAtShop.m */,
+				42649E8317E9D1AE0011EAAC /* LocationAtHome.h */,
+				42649E8417E9D1AE0011EAAC /* LocationAtHome.m */,
 				4205CD0817E994B500E1FDB1 /* Amount.h */,
 				4205CD0917E994B500E1FDB1 /* Amount.m */,
-				4205CD0117E992F100E1FDB1 /* Item.h */,
-				4205CD0217E992F100E1FDB1 /* Item.m */,
 				4205CD0417E992F200E1FDB1 /* Measurement.h */,
 				4205CD0517E992F200E1FDB1 /* Measurement.m */,
 			);
@@ -319,15 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4205CD0317E992F100E1FDB1 /* Item.m in Sources */,
+				42649E8E17E9D1AF0011EAAC /* Unit.m in Sources */,
+				42649E9117E9D1AF0011EAAC /* Location.m in Sources */,
+				42649E8B17E9D1AF0011EAAC /* Item.m in Sources */,
 				42DA9F9D17E8F9EB000E7187 /* ViewController.m in Sources */,
 				42DA9F9717E8F9EB000E7187 /* AppDelegate.m in Sources */,
 				4205CD1017E998E500E1FDB1 /* MigrationVC.m in Sources */,
+				42649E8817E9D1AE0011EAAC /* LocationAtShop.m in Sources */,
+				42649E8517E9D1AE0011EAAC /* LocationAtHome.m in Sources */,
 				424F398F17E946D40051A624 /* Model.xcdatamodeld in Sources */,
 				4235180617E90C1F00489190 /* CoreDataHelper.m in Sources */,
 				4205CD0C17E9951400E1FDB1 /* Model2toModel3.xcmappingmodel in Sources */,
 				4205CD0617E992F200E1FDB1 /* Measurement.m in Sources */,
-				4205CD1417E9B55500E1FDB1 /* Unit.m in Sources */,
 				42DA9F9317E8F9EB000E7187 /* main.m in Sources */,
 				4205CD0A17E994B500E1FDB1 /* Amount.m in Sources */,
 				4205CD1617E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel in Sources */,
@@ -556,12 +576,14 @@
 		424F398D17E946D40051A624 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				42649E7317E9CFA30011EAAC /* Model 6.xcdatamodel */,
+				42649E6C17E9B9380011EAAC /* Model 5.xcdatamodel */,
 				4205CD1117E9B51C00E1FDB1 /* Model 4.xcdatamodel */,
 				4205CD0717E9943500E1FDB1 /* Model 3.xcdatamodel */,
 				4205CD0017E9909500E1FDB1 /* Model 2.xcdatamodel */,
 				424F398E17E946D40051A624 /* Model.xcdatamodel */,
 			);
-			currentVersion = 4205CD1117E9B51C00E1FDB1 /* Model 4.xcdatamodel */;
+			currentVersion = 42649E7317E9CFA30011EAAC /* Model 6.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -14,6 +14,26 @@
 @implementation AppDelegate
 #define debug 1
 
+- (void)showUnitAndItemCount {
+    // List how many items there are in the database
+    NSFetchRequest *items =
+    [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    NSError *itemsError = nil;
+    NSArray *fetchedItems =
+    [[[self cdh] context] executeFetchRequest:items error:&itemsError];
+    if (!fetchedItems) {NSLog(@"%@", itemsError);}
+    else {NSLog(@"Found %lu item(s) ",(unsigned long)[fetchedItems count]);}
+    
+    // List how many units there are in the database
+    NSFetchRequest *units =
+    [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+    NSError *unitsError = nil;
+    NSArray *fetchedUnits =
+    [[[self cdh] context] executeFetchRequest:units error:&unitsError];
+    if (!fetchedUnits) {NSLog(@"%@", unitsError);}
+    else {NSLog(@"Found %lu unit(s) ",(unsigned long)[fetchedUnits count]);}
+}
+
 - (void)demo {
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));

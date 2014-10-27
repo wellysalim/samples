@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class LocationAtHome, LocationAtShop, Unit;
 
 @interface Item : NSManagedObject
 
@@ -17,5 +18,8 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSData * photoData;
 @property (nonatomic, retain) NSNumber * quantity;
+@property (nonatomic, retain) Unit *unit;
+@property (nonatomic, retain) LocationAtHome *locationAtHome;
+@property (nonatomic, retain) LocationAtShop *locationAtShop;
 
 @end
