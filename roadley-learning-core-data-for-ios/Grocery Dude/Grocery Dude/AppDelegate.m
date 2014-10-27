@@ -10,6 +10,8 @@
 #import "Item.h"
 #import "Amount.h"
 #import "Unit.h"
+#import "LocationAtHome.h"
+#import "LocationAtShop.h"
 
 @implementation AppDelegate
 #define debug 1
@@ -38,6 +40,7 @@
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    
 }
 
 - (CoreDataHelper*)cdh {
@@ -45,7 +48,10 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if (!_coreDataHelper) {
-        _coreDataHelper = [CoreDataHelper new];
+        static dispatch_once_t predicate;
+        dispatch_once(&predicate, ^{
+            _coreDataHelper = [CoreDataHelper new];
+        });
         [_coreDataHelper setupCoreData];
     }
     return _coreDataHelper;
