@@ -48,6 +48,9 @@
 		42EBEFD017EB0875000E9046 /* UnitPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFCF17EB0875000E9046 /* UnitPickerTF.m */; };
 		42EBEFD317EB0BCD000E9046 /* LocationAtHomePickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFD217EB0BCD000E9046 /* LocationAtHomePickerTF.m */; };
 		42EBEFD617EB0C0B000E9046 /* LocationAtShopPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFD517EB0C0B000E9046 /* LocationAtShopPickerTF.m */; };
+		42EBEFD817EB1AE1000E9046 /* DefaultData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 42EBEFD717EB1AE1000E9046 /* DefaultData.xml */; };
+		42EBEFDB17EBA0ED000E9046 /* CoreDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFDA17EBA0ED000E9046 /* CoreDataImporter.m */; };
+		42EBEFDD17EBA7D6000E9046 /* DefaultData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 42EBEFDC17EBA7D6000E9046 /* DefaultData.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,10 @@
 		42EBEFD217EB0BCD000E9046 /* LocationAtHomePickerTF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomePickerTF.m; sourceTree = "<group>"; };
 		42EBEFD417EB0C0B000E9046 /* LocationAtShopPickerTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShopPickerTF.h; sourceTree = "<group>"; };
 		42EBEFD517EB0C0B000E9046 /* LocationAtShopPickerTF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopPickerTF.m; sourceTree = "<group>"; };
+		42EBEFD717EB1AE1000E9046 /* DefaultData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DefaultData.xml; sourceTree = "<group>"; };
+		42EBEFD917EBA0ED000E9046 /* CoreDataImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataImporter.h; sourceTree = "<group>"; };
+		42EBEFDA17EBA0ED000E9046 /* CoreDataImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataImporter.m; sourceTree = "<group>"; };
+		42EBEFDC17EBA7D6000E9046 /* DefaultData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DefaultData.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +195,8 @@
 				42649E9317EA4CCA0011EAAC /* CoreDataTVC.m */,
 				42EBEFCA17EAD70B000E9046 /* CoreDataPickerTF.h */,
 				42EBEFCB17EAD70B000E9046 /* CoreDataPickerTF.m */,
+				42EBEFD917EBA0ED000E9046 /* CoreDataImporter.h */,
+				42EBEFDA17EBA0ED000E9046 /* CoreDataImporter.m */,
 			);
 			name = "Generic Core Data Classes";
 			sourceTree = "<group>";
@@ -195,6 +204,8 @@
 		424F398C17E946AD0051A624 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				42EBEFDC17EBA7D6000E9046 /* DefaultData.sqlite */,
+				42EBEFD717EB1AE1000E9046 /* DefaultData.xml */,
 				424F398D17E946D40051A624 /* Model.xcdatamodeld */,
 				4205CD0B17E9951400E1FDB1 /* Model2toModel3.xcmappingmodel */,
 				4205CD1517E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel */,
@@ -401,7 +412,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EBEFDD17EBA7D6000E9046 /* DefaultData.sqlite in Resources */,
 				42DA9F9F17E8F9EB000E7187 /* Images.xcassets in Resources */,
+				42EBEFD817EB1AE1000E9046 /* DefaultData.xml in Resources */,
 				42DA9F9117E8F9EB000E7187 /* InfoPlist.strings in Resources */,
 				42DA9F9A17E8F9EB000E7187 /* Main.storyboard in Resources */,
 			);
@@ -448,6 +461,7 @@
 				42DA9F9317E8F9EB000E7187 /* main.m in Sources */,
 				42EBEFC217EACD0D000E9046 /* LocationsAtHomeTVC.m in Sources */,
 				4205CD0A17E994B500E1FDB1 /* Amount.m in Sources */,
+				42EBEFDB17EBA0ED000E9046 /* CoreDataImporter.m in Sources */,
 				4205CD1617E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel in Sources */,
 				42EBEFD017EB0875000E9046 /* UnitPickerTF.m in Sources */,
 				42649E9B17EA5D750011EAAC /* ShopTVC.m in Sources */,
