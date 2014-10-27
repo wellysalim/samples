@@ -1,5 +1,5 @@
 //
-//  LocationAtHome.h
+//  LocationAtShop.h
 //  Grocery Dude
 //
 //  Created by Syd Polk on 10/5/14.
@@ -12,12 +12,13 @@
 
 @class Item;
 
-@interface LocationAtHome : Location
+@interface LocationAtShop : Location
 
+@property (nonatomic, retain) NSString * aisle;
 @property (nonatomic, retain) NSSet *items;
 @end
 
-@interface LocationAtHome (CoreDataGeneratedAccessors)
+@interface LocationAtShop (CoreDataGeneratedAccessors)
 
 - (void)addItemsObject:(Item *)value;
 - (void)removeItemsObject:(Item *)value;

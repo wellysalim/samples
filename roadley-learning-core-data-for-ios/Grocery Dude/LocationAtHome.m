@@ -12,6 +12,7 @@
 
 @implementation LocationAtHome
 
+@dynamic storedIn;
 @dynamic items;
 
 @end

@@ -12,6 +12,7 @@
 
 @implementation LocationAtShop
 
+@dynamic aisle;
 @dynamic items;
 
 @end
