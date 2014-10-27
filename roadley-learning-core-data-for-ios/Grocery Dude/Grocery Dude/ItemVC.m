@@ -11,6 +11,7 @@
 #import "Item.h"
 #import "LocationAtHome.h"
 #import "LocationAtShop.h"
+#import "Unit.h"
 
 @implementation ItemVC
 #define debug 1
@@ -39,6 +40,40 @@
     }
     [self.view endEditing:YES];
 }
+- (void)keyboardDidShow:(NSNotification *)n {
+    
+    // Find top of keyboard input view (i.e. picker)
+    CGRect keyboardRect =
+    [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    CGFloat keyboardTop = keyboardRect.origin.y;
+    
+    // Resize scroll view
+    CGRect newScrollViewFrame =
+    CGRectMake(0, 0, self.view.bounds.size.width, keyboardTop);
+    newScrollViewFrame.size.height = keyboardTop - self.view.bounds.origin.y;
+    [self.scrollView setFrame:newScrollViewFrame];
+    
+    // Scroll to the active Text-Field
+    [self.scrollView scrollRectToVisible:self.activeField.frame animated:YES];
+}
+- (void)keyboardWillHide:(NSNotification *)n {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    CGRect defaultFrame =
+    CGRectMake(self.scrollView.frame.origin.x,
+               self.scrollView.frame.origin.y,
+               self.view.frame.size.width,
+               self.view.frame.size.height);
+    
+    // Reset Scrollview to the same size as the containing view
+    [self.scrollView setFrame:defaultFrame];
+    
+    // Scroll to the top again
+    [self.scrollView scrollRectToVisible:self.nameTextField.frame
+                                animated:YES];
+}
 
 #pragma mark - DELEGATE: UITextField
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -51,6 +86,19 @@
             self.nameTextField.text = @"";
         }
     }
+    if (textField == _unitPickerTextField && _unitPickerTextField.picker) {
+        [_unitPickerTextField fetch];
+        [_unitPickerTextField.picker reloadAllComponents];
+    } else if (textField == _homeLocationPickerTextField &&
+               _homeLocationPickerTextField.picker) {
+        [_homeLocationPickerTextField fetch];
+        [_homeLocationPickerTextField.picker reloadAllComponents];
+    } else if (textField == _shopLocationPickerTextField &&
+               _shopLocationPickerTextField.picker) {
+        [_shopLocationPickerTextField fetch];
+        [_shopLocationPickerTextField.picker reloadAllComponents];
+    }
+    _activeField = textField;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (debug==1) {
@@ -86,6 +134,16 @@
                                            error:nil];
         self.nameTextField.text = item.name;
         self.quantityTextField.text = item.quantity.stringValue;
+        self.unitPickerTextField.text = item.unit.name;
+        self.unitPickerTextField.selectedObjectID = item.unit.objectID;
+        self.homeLocationPickerTextField.text =
+        item.locationAtHome.storedIn;
+        self.homeLocationPickerTextField.selectedObjectID =
+        item.locationAtHome.objectID;
+        self.shopLocationPickerTextField.text =
+        item.locationAtShop.aisle;
+        self.shopLocationPickerTextField.selectedObjectID =
+        item.locationAtShop.objectID;
     }
 }
 - (void)viewDidLoad {
@@ -96,11 +154,29 @@
     [self hideKeyboardWhenBackgroundIsTapped];
     self.nameTextField.delegate = self;
     self.quantityTextField.delegate = self;
+    
+    self.unitPickerTextField.delegate = self;
+    self.unitPickerTextField.pickerDelegate = self;
+    self.homeLocationPickerTextField.delegate = self;
+    self.homeLocationPickerTextField.pickerDelegate = self;
+    self.shopLocationPickerTextField.delegate = self;
+    self.shopLocationPickerTextField.pickerDelegate = self;
 }
 - (void)viewWillAppear:(BOOL)animated {
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    
+    // Register for keyboard notifications while the view is visible.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:self.view.window];
+    
     [self ensureItemHomeLocationIsNotNull];
     [self ensureItemShopLocationIsNotNull];
 
@@ -120,6 +196,14 @@
     CoreDataHelper *cdh =
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
     [cdh saveContext];
+    
+    // Unregister for keyboard notifications while the view is not visible.
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidShowNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 
 #pragma mark - DATA
@@ -195,6 +279,76 @@
                 item.locationAtShop = locationAtShop;
             }
         }
+    }
+}
+
+#pragma mark - PICKERS
+- (void)selectedObjectID:(NSManagedObjectID *)objectID
+      changedForPickerTF:(CoreDataPickerTF *)pickerTF {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if (self.selectedItemID) {
+        CoreDataHelper *cdh =
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        
+        Item *item =
+        (Item*)[cdh.context existingObjectWithID:self.selectedItemID
+                                           error:nil];;
+        NSError *error;
+        if (pickerTF == self.unitPickerTextField) {
+            Unit *unit = (Unit*)[cdh.context existingObjectWithID:objectID
+                                                            error:&error];
+            item.unit = unit;
+            self.unitPickerTextField.text = item.unit.name;
+        }
+        else if (pickerTF == self.homeLocationPickerTextField) {
+            LocationAtHome *locationAtHome =
+            (LocationAtHome*)[cdh.context existingObjectWithID:objectID
+                                                         error:&error];
+            item.locationAtHome = locationAtHome;
+            self.homeLocationPickerTextField.text =
+            item.locationAtHome.storedIn;
+        }
+        else if (pickerTF == self.shopLocationPickerTextField) {
+            LocationAtShop *locationAtShop =
+            (LocationAtShop*)[cdh.context existingObjectWithID:objectID
+                                                         error:&error];
+            item.locationAtShop = locationAtShop;
+            self.shopLocationPickerTextField.text =
+            item.locationAtShop.aisle;
+        }
+        [self refreshInterface];
+        if (error) {
+            NSLog(@"Error selecting object on picker: %@, %@",
+                  error, error.localizedDescription);
+        }
+    }
+}
+- (void)selectedObjectClearedForPickerTF:(CoreDataPickerTF *)pickerTF {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if (self.selectedItemID) {
+        CoreDataHelper *cdh =
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        Item *item =
+        (Item*)[cdh.context existingObjectWithID:self.selectedItemID
+                                           error:nil];
+        
+        if (pickerTF == self.unitPickerTextField) {
+            item.unit = nil;
+            self.unitPickerTextField.text = @"";
+        }
+        else if (pickerTF == self.homeLocationPickerTextField) {
+            item.LocationAtHome = nil;
+            self.homeLocationPickerTextField.text = @"";
+        }
+        else if (pickerTF == self.shopLocationPickerTextField) {
+            item.LocationAtShop = nil;
+            self.shopLocationPickerTextField.text = @"";
+        }
+        [self refreshInterface];
     }
 }
 

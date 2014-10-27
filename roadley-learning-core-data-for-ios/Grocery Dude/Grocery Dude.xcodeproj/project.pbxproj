@@ -44,6 +44,10 @@
 		42EBEFC317EACD0D000E9046 /* LocationsAtShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFC117EACD0D000E9046 /* LocationsAtShopTVC.m */; };
 		42EBEFC817EACD1B000E9046 /* LocationAtHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFC517EACD1B000E9046 /* LocationAtHomeVC.m */; };
 		42EBEFC917EACD1B000E9046 /* LocationAtShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFC717EACD1B000E9046 /* LocationAtShopVC.m */; };
+		42EBEFCC17EAD70B000E9046 /* CoreDataPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFCB17EAD70B000E9046 /* CoreDataPickerTF.m */; };
+		42EBEFD017EB0875000E9046 /* UnitPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFCF17EB0875000E9046 /* UnitPickerTF.m */; };
+		42EBEFD317EB0BCD000E9046 /* LocationAtHomePickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFD217EB0BCD000E9046 /* LocationAtHomePickerTF.m */; };
+		42EBEFD617EB0C0B000E9046 /* LocationAtShopPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EBEFD517EB0C0B000E9046 /* LocationAtShopPickerTF.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +127,14 @@
 		42EBEFC517EACD1B000E9046 /* LocationAtHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomeVC.m; sourceTree = "<group>"; };
 		42EBEFC617EACD1B000E9046 /* LocationAtShopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShopVC.h; sourceTree = "<group>"; };
 		42EBEFC717EACD1B000E9046 /* LocationAtShopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopVC.m; sourceTree = "<group>"; };
+		42EBEFCA17EAD70B000E9046 /* CoreDataPickerTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataPickerTF.h; sourceTree = "<group>"; };
+		42EBEFCB17EAD70B000E9046 /* CoreDataPickerTF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataPickerTF.m; sourceTree = "<group>"; };
+		42EBEFCE17EB0875000E9046 /* UnitPickerTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitPickerTF.h; sourceTree = "<group>"; };
+		42EBEFCF17EB0875000E9046 /* UnitPickerTF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitPickerTF.m; sourceTree = "<group>"; };
+		42EBEFD117EB0BCD000E9046 /* LocationAtHomePickerTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtHomePickerTF.h; sourceTree = "<group>"; };
+		42EBEFD217EB0BCD000E9046 /* LocationAtHomePickerTF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomePickerTF.m; sourceTree = "<group>"; };
+		42EBEFD417EB0C0B000E9046 /* LocationAtShopPickerTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShopPickerTF.h; sourceTree = "<group>"; };
+		42EBEFD517EB0C0B000E9046 /* LocationAtShopPickerTF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopPickerTF.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +186,8 @@
 				4235180517E90C1F00489190 /* CoreDataHelper.m */,
 				42649E9217EA4CCA0011EAAC /* CoreDataTVC.h */,
 				42649E9317EA4CCA0011EAAC /* CoreDataTVC.m */,
+				42EBEFCA17EAD70B000E9046 /* CoreDataPickerTF.h */,
+				42EBEFCB17EAD70B000E9046 /* CoreDataPickerTF.m */,
 			);
 			name = "Generic Core Data Classes";
 			sourceTree = "<group>";
@@ -253,6 +267,7 @@
 		42DA9F8C17E8F9EB000E7187 /* Grocery Dude */ = {
 			isa = PBXGroup;
 			children = (
+				42EBEFCD17EB07FF000E9046 /* Grocery Dude Picker Text Fields */,
 				42649E9517EA53E70011EAAC /* Grocery Dude Table View Controllers */,
 				4205CD0D17E998BA00E1FDB1 /* Grocery Dude View Controllers */,
 				424F398C17E946AD0051A624 /* Data Model */,
@@ -295,6 +310,19 @@
 				42DA9FAE17E8F9EC000E7187 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42EBEFCD17EB07FF000E9046 /* Grocery Dude Picker Text Fields */ = {
+			isa = PBXGroup;
+			children = (
+				42EBEFCE17EB0875000E9046 /* UnitPickerTF.h */,
+				42EBEFCF17EB0875000E9046 /* UnitPickerTF.m */,
+				42EBEFD117EB0BCD000E9046 /* LocationAtHomePickerTF.h */,
+				42EBEFD217EB0BCD000E9046 /* LocationAtHomePickerTF.m */,
+				42EBEFD417EB0C0B000E9046 /* LocationAtShopPickerTF.h */,
+				42EBEFD517EB0C0B000E9046 /* LocationAtShopPickerTF.m */,
+			);
+			name = "Grocery Dude Picker Text Fields";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,8 +424,10 @@
 			files = (
 				42649E8E17E9D1AF0011EAAC /* Unit.m in Sources */,
 				42EBEF7617EA98F7000E9046 /* ItemVC.m in Sources */,
+				42EBEFD317EB0BCD000E9046 /* LocationAtHomePickerTF.m in Sources */,
 				42649E9117E9D1AF0011EAAC /* Location.m in Sources */,
 				42649E8B17E9D1AF0011EAAC /* Item.m in Sources */,
+				42EBEFCC17EAD70B000E9046 /* CoreDataPickerTF.m in Sources */,
 				42DA9F9D17E8F9EB000E7187 /* ViewController.m in Sources */,
 				42EBEFBA17EAC939000E9046 /* UnitsTVC.m in Sources */,
 				42EBEFBD17EACA38000E9046 /* UnitVC.m in Sources */,
@@ -405,6 +435,7 @@
 				4205CD1017E998E500E1FDB1 /* MigrationVC.m in Sources */,
 				42649E8817E9D1AE0011EAAC /* LocationAtShop.m in Sources */,
 				42EBEFC317EACD0D000E9046 /* LocationsAtShopTVC.m in Sources */,
+				42EBEFD617EB0C0B000E9046 /* LocationAtShopPickerTF.m in Sources */,
 				42649E9817EA540D0011EAAC /* PrepareTVC.m in Sources */,
 				42649E8517E9D1AE0011EAAC /* LocationAtHome.m in Sources */,
 				42EBEFC817EACD1B000E9046 /* LocationAtHomeVC.m in Sources */,
@@ -418,6 +449,7 @@
 				42EBEFC217EACD0D000E9046 /* LocationsAtHomeTVC.m in Sources */,
 				4205CD0A17E994B500E1FDB1 /* Amount.m in Sources */,
 				4205CD1617E9B58800E1FDB1 /* Model3toModel4.xcmappingmodel in Sources */,
+				42EBEFD017EB0875000E9046 /* UnitPickerTF.m in Sources */,
 				42649E9B17EA5D750011EAAC /* ShopTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
