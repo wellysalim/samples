@@ -2,8 +2,8 @@
 //  MasterDetailSwiftTests.swift
 //  MasterDetailSwiftTests
 //
-//  Created by Syd Polk on 9/18/14.
-//  Copyright (c) 2014 Bone Jarring Games and Software. All rights reserved.
+//  Created by Syd Polk on 5/21/15.
+//  Copyright (c) 2015 Bone Jarring Games and Software. All rights reserved.
 //
 
 import UIKit
