@@ -1,22 +1,29 @@
 //
-//  MasterDetailObjCTests.m
-//  MasterDetailObjCTests
+//  MasterDetailObjCUITests.m
+//  MasterDetailObjCUITests
 //
 //  Created by Syd Polk on 6/9/15.
 //  Copyright © 2015 Bone Jarring Games and Software. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 
-@interface MasterDetailObjCTests : XCTestCase
+@interface MasterDetailObjCUITests : XCTestCase
 
 @end
 
-@implementation MasterDetailObjCTests
+@implementation MasterDetailObjCUITests
 
 - (void)setUp {
     [super setUp];
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    // In UI tests it is usually best to stop immediately when a failure occurs.
+    self.continueAfterFailure = NO;
+    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+    [[[XCUIApplication alloc] init] launch];
 }
 
 - (void)tearDown {
@@ -25,15 +32,8 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
+    // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
 }
 
 @end

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62507A4419CBDE2300A1D9B2"
+               BlueprintIdentifier = "62781B2D1B273FEA00DEB173"
                BuildableName = "MasterDetailObjC.app"
                BlueprintName = "MasterDetailObjC"
-               ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62507A6319CBDE2300A1D9B2"
-               BuildableName = "MasterDetailObjCTests.xctest"
-               BlueprintName = "MasterDetailObjCTests"
                ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62507A6319CBDE2300A1D9B2"
+               BlueprintIdentifier = "62781B4C1B273FEA00DEB173"
                BuildableName = "MasterDetailObjCTests.xctest"
                BlueprintName = "MasterDetailObjCTests"
+               ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "62781B571B273FEA00DEB173"
+               BuildableName = "MasterDetailObjCUITests.xctest"
+               BlueprintName = "MasterDetailObjCUITests"
                ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,12 +52,14 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62507A4419CBDE2300A1D9B2"
+            BlueprintIdentifier = "62781B2D1B273FEA00DEB173"
             BuildableName = "MasterDetailObjC.app"
             BlueprintName = "MasterDetailObjC"
             ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -71,11 +69,13 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62507A4419CBDE2300A1D9B2"
+            BlueprintIdentifier = "62781B2D1B273FEA00DEB173"
             BuildableName = "MasterDetailObjC.app"
             BlueprintName = "MasterDetailObjC"
             ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
@@ -90,10 +90,11 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62507A4419CBDE2300A1D9B2"
+            BlueprintIdentifier = "62781B2D1B273FEA00DEB173"
             BuildableName = "MasterDetailObjC.app"
             BlueprintName = "MasterDetailObjC"
             ReferencedContainer = "container:MasterDetailObjC.xcodeproj">
