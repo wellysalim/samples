@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  MasterDetailSwift
 //
-//  Created by Syd Polk on 6/9/15.
+//  Created by Syd Polk on 8/4/15.
 //  Copyright © 2015 Bone Jarring Games and Software. All rights reserved.
 //
 

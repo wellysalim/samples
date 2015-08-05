@@ -2,11 +2,12 @@
 //  MasterDetailSwiftTests.swift
 //  MasterDetailSwiftTests
 //
-//  Created by Syd Polk on 6/9/15.
+//  Created by Syd Polk on 8/4/15.
 //  Copyright © 2015 Bone Jarring Games and Software. All rights reserved.
 //
 
 import XCTest
+@testable import MasterDetailSwift
 
 class MasterDetailSwiftTests: XCTestCase {
     
@@ -27,7 +28,7 @@ class MasterDetailSwiftTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }
