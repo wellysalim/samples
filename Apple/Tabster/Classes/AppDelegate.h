@@ -1,6 +1,6 @@
 /*
-     File: main.m
- Abstract: Main source file for the Tabster sample.
+     File: AppDelegate.h
+ Abstract: The application delegate class used for installing our UITabBarController
   Version: 1.6
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -47,11 +47,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+@interface AppDelegate : NSObject
 
-int main(int argc, char *argv[])
-{
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}
+@property (nonatomic, strong) UIWindow *window;
+
+@end

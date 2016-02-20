@@ -1,6 +1,6 @@
 /*
-     File: main.m
- Abstract: Main source file for the Tabster sample.
+     File: FavoritesViewController.h
+ Abstract: The "Favorites" view controller.
   Version: 1.6
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -47,11 +47,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+@interface FavoritesViewController : UIViewController
 
-int main(int argc, char *argv[])
-{
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}
+@end

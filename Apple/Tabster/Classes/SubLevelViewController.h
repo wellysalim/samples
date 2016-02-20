@@ -1,6 +1,6 @@
 /*
-     File: main.m
- Abstract: Main source file for the Tabster sample.
+     File: SubLevelViewController.h
+ Abstract: The view controller for sublevel 2.
   Version: 1.6
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -47,11 +47,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+@interface SubLevelViewController : UITableViewController
 
-int main(int argc, char *argv[])
-{
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}
+@property (nonatomic, strong) NSString *currentSelectionTitle;
+
+@end

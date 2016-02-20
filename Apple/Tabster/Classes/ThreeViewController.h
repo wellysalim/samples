@@ -1,6 +1,6 @@
 /*
-     File: main.m
- Abstract: Main source file for the Tabster sample.
+     File: ThreeViewController.h
+ Abstract: The view controller for page three.
   Version: 1.6
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -47,11 +47,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+@interface ThreeViewController : UIViewController
 
-int main(int argc, char *argv[])
-{
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}
+@end

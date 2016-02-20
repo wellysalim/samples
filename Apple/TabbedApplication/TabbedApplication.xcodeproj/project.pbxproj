@@ -159,6 +159,7 @@
 		627B825E1B255EA600399A9E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Bone Jarring Games and Software";
 				TargetAttributes = {
@@ -415,6 +416,7 @@
 				627B82891B255EA700399A9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		627B828A1B255EA700399A9E /* Build configuration list for PBXNativeTarget "TabbedApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +425,7 @@
 				627B828C1B255EA700399A9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,6 +1,6 @@
 /*
-     File: main.m
- Abstract: Main source file for the Tabster sample.
+     File: LandscapeViewController.h
+ Abstract: The application view controller used when the device is in landscape orientation.
   Version: 1.6
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
@@ -47,11 +47,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
+@interface LandscapeViewController : UIViewController
 
-int main(int argc, char *argv[])
-{
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}
+@property (nonatomic, strong) UIImage *image;
+
+@end
