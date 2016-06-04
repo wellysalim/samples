@@ -2,8 +2,8 @@
 //  DetailViewController.m
 //  MasterDetailObjC
 //
-//  Created by Syd Polk on 8/18/14.
-//  Copyright (c) 2014 Bone Jarring Games and Software. All rights reserved.
+//  Created by Syd Polk on 6/9/15.
+//  Copyright © 2015 Bone Jarring Games and Software. All rights reserved.
 //
 
 #import "DetailViewController.h"
@@ -13,7 +13,7 @@
 @end
 
 @implementation DetailViewController
-            
+
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem {

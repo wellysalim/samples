@@ -2,11 +2,10 @@
 //  MasterDetailObjCTests.m
 //  MasterDetailObjCTests
 //
-//  Created by Syd Polk on 8/18/14.
-//  Copyright (c) 2014 Bone Jarring Games and Software. All rights reserved.
+//  Created by Syd Polk on 6/9/15.
+//  Copyright © 2015 Bone Jarring Games and Software. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
 @interface MasterDetailObjCTests : XCTestCase
@@ -27,7 +26,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 - (void)testPerformanceExample {

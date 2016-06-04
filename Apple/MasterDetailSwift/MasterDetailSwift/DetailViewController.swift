@@ -2,14 +2,14 @@
 //  DetailViewController.swift
 //  MasterDetailSwift
 //
-//  Created by Syd Polk on 8/18/14.
-//  Copyright (c) 2014 Bone Jarring Games and Software. All rights reserved.
+//  Created by Syd Polk on 8/4/15.
+//  Copyright © 2015 Bone Jarring Games and Software. All rights reserved.
 //
 
 import UIKit
 
 class DetailViewController: UIViewController {
-                            
+
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
@@ -22,9 +22,9 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
+        if let detail = self.detailItem {
             if let label = self.detailDescriptionLabel {
-                label.text = detail.valueForKey("timeStamp").description
+                label.text = detail.valueForKey("timeStamp")!.description
             }
         }
     }
