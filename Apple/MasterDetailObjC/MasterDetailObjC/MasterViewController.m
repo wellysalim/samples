@@ -85,8 +85,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self configureCell:cell withEvent:event];
+    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    [self configureCell:cell withObject:object];
     return cell;
 }
 
