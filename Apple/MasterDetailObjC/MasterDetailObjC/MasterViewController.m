@@ -80,7 +80,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    [self configureCell:cell withObject:object];
     return cell;
 }
 
@@ -104,8 +105,7 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+- (void)configureCell:(UITableViewCell *)cell withObject:(NSManagedObject *)object {
     cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
 }
 
@@ -185,12 +185,11 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] withObject:anObject];
             break;
             
         case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
             break;
     }
 }
