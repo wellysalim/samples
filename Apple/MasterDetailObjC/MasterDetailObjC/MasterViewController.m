@@ -43,7 +43,7 @@
     Event *newEvent = [[Event alloc] initWithContext:context];
         
     // If appropriate, configure the new managed object.
-    newEvent.timeStamp = [NSDate date];
+    newEvent.timestamp = [NSDate date];
         
     // Save the context.
     NSError *error = nil;
@@ -85,8 +85,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    [self configureCell:cell withObject:object];
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self configureCell:cell withEvent:event];
     return cell;
 }
 
@@ -114,7 +114,7 @@
 
 
 - (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event {
-    cell.textLabel.text = event.timeStamp.description;
+    cell.textLabel.text = event.timestamp.description;
 }
 
 
@@ -132,7 +132,7 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
 
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     
